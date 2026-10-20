@@ -1,0 +1,33 @@
+{
+  "id": "./",
+  "name": "고양 장항 아테라 명칭 변경 · 관리자",
+  "short_name": "아테라 관리",
+  "description": "고양 장항 아테라 입주예정자협의회 · 법무법인 제이엘",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "ko",
+  "background_color": "#070b14",
+  "theme_color": "#16264F",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
