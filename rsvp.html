@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>고양 장항 아테라 총회 신청 · 관리자</title>
+<meta name="description" content="고양 장항 아테라 입주예정자협의회 총회 참석 신청 · 꼭 참석하실 수 있는 세대만 신청해 주세요">
+<meta property="og:type" content="website">
+<meta property="og:title" content="고양 장항 아테라 총회 신청 · 관리자">
+<meta property="og:description" content="고양 장항 아테라 입주예정자협의회 총회 참석 신청 · 꼭 참석하실 수 있는 세대만 신청해 주세요">
+<meta property="og:image" content="https://kingjin77-rgb.github.io/goyang-atera-exec/og-rsvp.png">
+<meta property="og:url" content="https://kingjin77-rgb.github.io/goyang-atera-exec/rsvp.html">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#16264F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="아테라 관리">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+<link rel="preload" href="fonts/Pretendard-Regular.subset.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Pretendard;font-weight:400;font-display:swap;src:url(fonts/Pretendard-Regular.subset.woff2) format("woff2")}
+@font-face{font-family:Pretendard;font-weight:700;font-display:swap;src:url(fonts/Pretendard-Bold.subset.woff2) format("woff2")}
+:root{--navy:#16264F;--navy2:#24386B;--sky:#A9CCE8;--sky2:#E8F1F9;--sand:#E9C88E;--ink:#1B2236;--ink2:#4A5468;--line:#DCE2EC;--bg:#F4F6FA;--ok:#1D7A4E;--no:#B23B3B}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,'맑은 고딕','Malgun Gothic',-apple-system,sans-serif;font-size:16px;line-height:1.55;word-break:keep-all;overflow-wrap:break-word}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 48px}
+.top{background:var(--navy);color:#fff;padding:22px 0 26px}
+.top .wrap{padding-bottom:0}
+.top .org{font-size:13px;opacity:.75;letter-spacing:.02em}
+.top h1{margin:4px 0 0;font-size:23px;line-height:1.3;font-weight:700}
+.top .sub{margin-top:6px;font-size:14px;opacity:.85}
+.bar{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:6px 12px;font-size:13px;text-decoration:none}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:14px}
+.card h2{margin:0 0 10px;font-size:18px}
+.card h3{margin:16px 0 8px;font-size:15px}
+.muted{color:var(--ink2);font-size:14px}
+.stmt{background:var(--sky2);border-radius:10px;padding:12px 14px;font-size:15px}
+.cnt{display:flex;align-items:baseline;gap:6px;margin-top:12px}
+.cnt b{font-size:28px;color:var(--navy)}
+.prog{height:8px;background:#E6EBF3;border-radius:99px;overflow:hidden;margin-top:6px}
+.prog i{display:block;height:100%;background:var(--navy);width:0}
+label.f{display:block;margin-top:12px;font-size:14px;font-weight:600}
+input.t,select.t{display:block;width:100%;margin-top:6px;padding:12px 12px;border:1px solid #C9D1DE;border-radius:10px;background:#fff;font-size:16px}
+input.t:focus,select.t:focus{outline:2px solid var(--sky);border-color:var(--navy)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dongs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.dongs button{padding:12px 0;border:1px solid #C9D1DE;border-radius:10px;background:#fff;font-weight:700}
+.dongs button.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn{display:block;width:100%;margin-top:16px;padding:15px;border:0;border-radius:12px;background:var(--navy);color:#fff;font-size:17px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none}
+.btn:disabled{opacity:.45;cursor:default}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+.btn.sm{display:inline-block;width:auto;margin:0;padding:8px 14px;font-size:14px;border-radius:9px}
+.btns{display:flex;gap:10px}.btns .btn{flex:1}
+.choice{display:grid;gap:10px;margin-top:8px}
+.choice button{display:flex;align-items:center;gap:12px;text-align:left;padding:14px;border:1.5px solid #C9D1DE;border-radius:12px;background:#fff;font-size:16px;cursor:pointer}
+.choice button .bx{flex:none;width:22px;height:22px;border:2px solid #8C97AB;border-radius:4px;position:relative}
+.choice button.on{border-color:var(--navy);background:var(--sky2)}
+.choice button.on .bx{border-color:var(--navy);background:var(--navy)}
+.choice button.on .bx::after{content:"";position:absolute;left:6px;top:1px;width:6px;height:12px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+.tog{display:flex;align-items:center;gap:10px;margin-top:14px;font-weight:600;cursor:pointer}
+.tog input{width:20px;height:20px}
+.pv{font-size:13px;color:var(--ink2);background:#F7F8FB;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-top:10px}
+.pv b{color:var(--ink)}
+.err{color:var(--no);font-size:14px;margin-top:8px;min-height:1em}
+.pad{position:relative;margin-top:8px;border:1.5px dashed #9AA6BB;border-radius:12px;background:#fff;touch-action:none;height:180px}
+.pad canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:12px}
+.pad .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#A3ACBD;pointer-events:none;font-size:15px}
+.pad .clr{position:absolute;right:8px;top:8px;z-index:2}
+.steps{display:flex;gap:6px;margin:16px 0 0}
+.steps i{flex:1;height:4px;border-radius:9px;background:#D5DCE7}
+.steps i.on{background:var(--navy)}
+.hide{display:none!important}
+.deedbox{margin-top:12px;background:#E9EDF3;border-radius:10px;padding:8px;overflow:hidden}
+.deedbox .dz{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.12);margin:0 auto;width:210mm}
+.done{text-align:center}
+.done .ic{width:56px;height:56px;border-radius:50%;background:var(--ok);color:#fff;font-size:30px;line-height:56px;margin:4px auto 8px}
+.foot{text-align:center;color:#8A93A5;font-size:12px;margin-top:22px}
+.flow{list-style:none;margin:6px 0 0;padding:0;position:relative}
+.flow li{position:relative;display:flex;gap:12px;padding:0 0 14px}
+.flow li:last-child{padding-bottom:0}
+.flow li::before{content:"";position:absolute;left:15px;top:32px;bottom:0;width:2px;background:#D5DCE7}
+.flow li:last-child::before{display:none}
+.flow .n{flex:none;width:32px;height:32px;border-radius:50%;background:#E6EBF3;color:var(--ink2);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;position:relative;z-index:1}
+.flow .tx b{display:block;font-size:15px}
+.flow .tx span{display:block;font-size:13px;color:var(--ink2)}
+.flow li.now .n{background:var(--navy);color:#fff;box-shadow:0 0 0 5px var(--sky2)}
+.flow li.now .tx b{color:var(--navy)}
+.flow .now-t{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:99px;background:var(--sand);color:#5A3E0E;font-size:11px;font-weight:700;vertical-align:2px}
+/* 관리자 */
+.adm .wrap{max-width:1080px}
+table.l{width:100%;border-collapse:collapse;font-size:14px;background:#fff}
+table.l th,table.l td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;white-space:nowrap}
+table.l th{background:#F2F5FA;font-size:13px;color:var(--ink2);position:sticky;top:0}
+table.l tr.v td{color:#A0A7B4;text-decoration:line-through}
+table.l tr.dup td{color:#8A93A5}
+.tag{display:inline-block;padding:2px 8px;border-radius:99px;font-size:12px;font-weight:700}
+.tag.a{background:#E2F3EA;color:var(--ok)}.tag.d{background:#F8E5E5;color:var(--no)}.tag.g{background:#ECEFF4;color:#6A7385}
+.scroll{overflow:auto;max-height:70vh;border:1px solid var(--line);border-radius:10px;margin-top:10px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+.kpi small{display:block;color:var(--ink2);font-size:12px}.kpi b{font-size:22px}
+.flt{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.flt select,.flt input{padding:8px 10px;border:1px solid #C9D1DE;border-radius:9px;background:#fff;font-size:14px}
+.miss{font-size:13px;color:var(--ink2);line-height:1.8;margin-top:8px}
+.modal{position:fixed;inset:0;background:rgba(10,16,30,.55);z-index:50;display:flex;flex-direction:column}
+.modal .mh{display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:10px 12px;background:#fff}
+.modal .mb{flex:1;overflow:auto;padding:12px}
+@media (max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.rv-t{width:100%;border-collapse:collapse;font-size:15px}.rv-t th{width:74px;text-align:left;vertical-align:top;padding:8px 8px 8px 0;color:var(--ink2);font-weight:600;white-space:nowrap}.rv-t td{padding:8px 0;border-bottom:1px solid var(--line)}.rv-t tr:last-child td{border-bottom:0}
+.rv-ul{margin:0;padding-left:18px;line-height:1.7}
+.rsvp-cta{border:1.5px solid var(--navy)}.rsvp-cta .btn{margin-top:12px}
+/* ── 인트로 (법무법인 제이엘 플랫폼 공통) ── */
+:root{--ease:cubic-bezier(.22,1,.36,1)}
+.intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#070b14;color:#fff;overflow:hidden}
+.intro.gone{display:none}
+.intro-bg{position:absolute;inset:0;background:radial-gradient(58% 42% at 50% 40%,rgba(92,130,255,.28),transparent 70%),radial-gradient(45% 40% at 80% 80%,rgba(169,204,232,.18),transparent 70%),linear-gradient(160deg,#070b14,#0d1530);transform:scale(1.08);animation:introBg 5s var(--ease) forwards}
+@keyframes introBg{to{transform:scale(1)}}
+.intro-in{position:relative;text-align:center;padding:0 26px;max-width:460px}
+.intro-logo{position:relative;display:inline-block;overflow:hidden;opacity:0;animation:logoIn 1.15s var(--ease) .2s forwards}
+.intro-logo img{display:block;width:230px;max-width:62vw;height:auto}
+@keyframes logoIn{from{opacity:0;transform:scale(.9) translateY(10px);filter:blur(9px)}to{opacity:1;transform:none;filter:blur(0)}}
+.intro-logo .shine{position:absolute;top:-30%;bottom:-30%;width:42%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);animation:1.25s cubic-bezier(.5,0,.3,1) 1.1s forwards shine}
+@keyframes shine{to{left:130%}}
+.intro-rule{width:0;height:1px;margin:24px auto 20px;background:linear-gradient(90deg,transparent,rgba(143,168,255,.85),transparent);animation:rule .9s var(--ease) 1.55s forwards}
+@keyframes rule{to{width:200px}}
+.intro-apt{font-size:1.52rem;font-weight:700;letter-spacing:.3em;opacity:0;animation:introTx 1.35s var(--ease) 1.8s forwards;text-indent:.3em}
+.intro-org{font-size:.84rem;color:#93a4c4;letter-spacing:.2em;margin-top:10px;opacity:0;animation:introTx 1.15s var(--ease) 2.25s forwards;text-indent:.2em}
+@keyframes introTx{from{opacity:0;letter-spacing:.6em;filter:blur(7px);transform:translateY(9px)}to{opacity:1;letter-spacing:.22em;filter:blur(0);transform:none}}
+.intro-by{font-size:.76rem;color:#5e6e8a;letter-spacing:.16em;margin-top:26px;opacity:0;animation:byIn .9s var(--ease) 2.75s forwards}
+@keyframes byIn{to{opacity:1}}
+.intro-skip{font-size:.76rem;color:#3e4a62;letter-spacing:.1em;margin-top:34px;opacity:0;animation:byIn 1s var(--ease) 3.3s forwards}
+.intro.out .intro-in{animation:introOut .55s var(--ease) 4.5s forwards}
+@keyframes introOut{to{opacity:0;transform:translateY(-14px) scale(.975);filter:blur(4px)}}
+.intro.out{animation:1s cubic-bezier(.76,0,.24,1) 4.8s forwards curtain}
+@keyframes curtain{to{transform:translateY(-101%)}}
+body.booting{overflow:hidden}
+body.booting #app{opacity:0;transform:translateY(16px)}
+body.booted #app{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .8s var(--ease)}
+@media (prefers-reduced-motion:reduce){.intro{display:none}}
+/* ── 앱 설치 (홈 화면에 추가) ── */
+.chip.ins{background:#fff;color:var(--navy);border-color:#fff;font-weight:700;cursor:pointer}
+@media (display-mode:standalone){.chip.ins{display:none!important}}
+.install{position:fixed;left:12px;right:12px;z-index:70;bottom:calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 12px 12px 14px;box-shadow:0 2px 4px rgba(11,18,32,.05),0 18px 48px rgba(11,18,32,.16)}
+.ins-ic{width:42px;height:42px;border-radius:12px;flex:none}
+.ins-tx{flex:1;min-width:0}.ins-tx b{display:block;font-size:15px}.ins-tx span{display:block;font-size:13px;color:var(--ink2);line-height:1.5;margin-top:2px}
+.ins-btns{display:flex;align-items:center;gap:4px;flex:none}
+.ins-x{width:30px;height:30px;border:0;background:none;border-radius:9px;color:#8A93A5;font-size:15px;cursor:pointer}
+@media(min-width:960px){.install{left:auto;right:24px;bottom:24px;max-width:400px}}
+.inapp-bar{position:fixed;left:10px;right:10px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:90;display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:14px;background:#191919;color:#fff;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.inapp-bar span{flex:1}
+.inapp-bar button{border:0;border-radius:999px;padding:8px 12px;font-weight:700;font-size:13px;background:#fee500;color:#111;cursor:pointer}
+.inapp-bar button.x{background:0 0;color:#fff;padding:6px}
+body.has-inapp .wrap{padding-bottom:90px}
+.sheet{position:fixed;inset:0;z-index:120;background:rgba(10,16,30,.5);display:flex;align-items:flex-end;justify-content:center}
+.sheet .sh{background:#fff;width:100%;max-width:560px;border-radius:18px 18px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));max-height:85vh;overflow:auto}
+.sheet h3{margin:0 0 12px;font-size:18px}
+.ins-how .ins-b{font-weight:700;margin-bottom:8px}
+.ins-how ol{margin:0 0 12px;padding-left:22px;line-height:1.9;font-size:15px}
+.ins-how p{font-size:13px;color:#6A7385;line-height:1.7;margin:10px 0 0}
+/* ── 동의서 양식 (HWP 원본 좌표 그대로 · mm) ── */
+.pg{position:relative;width:210mm;height:297mm;background:#fff;color:#000;overflow:hidden;line-height:1.2;text-align:left;
+ font-family:Pretendard,'맑은 고딕','Malgun Gothic',sans-serif;font-size:11pt;word-break:keep-all;letter-spacing:.07em;word-spacing:.1em;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pg *{box-sizing:border-box;margin:0;padding:0}
+.pg .ab{position:absolute}
+.pg .t,.pg .f{left:30mm;width:150mm;text-align:center;font-size:15pt;font-weight:700;line-height:1;letter-spacing:.15em;word-spacing:.15em}
+.pg table{position:absolute;left:30.7mm;width:148mm;border-collapse:collapse;table-layout:fixed}
+.pg td{border:.12mm solid #000;text-align:center;vertical-align:middle;font-size:11pt;line-height:1.2;padding:.5mm 1.8mm;overflow:hidden;white-space:nowrap}
+.pg .ti td{height:9.6mm}.pg .tj td{height:9.1mm}
+.pg td.h{background:#d9d9d9}
+.pg .tk td{font-size:13pt}
+.pg .tk tr.r0 td{height:14.65mm;background:#fff7cc}
+.pg .tk tr.r1 td{height:33.2mm}
+.pg .tk tr.r2 td{height:14.65mm}
+.pg .tk td.l{text-align:left}
+.pg .tk .cb{display:block;height:5.4mm;line-height:5.4mm}
+.pg .tk .ct{display:block;font-size:10pt;line-height:1.3}
+.pg .bx{display:inline-block;width:3.4mm;height:3.4mm;border:.25mm solid #000;vertical-align:middle;position:relative}
+.pg .bx.on::after{content:"";position:absolute;left:.9mm;top:-.2mm;width:1.1mm;height:2.2mm;border:solid #000;border-width:0 .5mm .5mm 0;transform:rotate(45deg)}
+.pg .p{left:30mm;width:150mm;font-size:11pt;line-height:6.2mm;text-align:justify;letter-spacing:.08em;word-spacing:.05em}
+.pg .d{left:30mm;width:150mm;text-align:center;font-size:12pt;line-height:1}
+.pg .s{left:30mm;width:150mm;height:6mm;font-size:12pt;line-height:6mm}
+.pg .s .k{position:absolute;right:56.5mm;white-space:pre}
+.pg .s .v{position:absolute;left:94.5mm;width:26mm;text-align:left;white-space:nowrap;overflow:hidden}
+.pg .s .v.sm{font-size:10pt}.pg .s .v.xs{font-size:8pt}
+/* 서명은 「(서명 또는 날인)」 자리에 — 계약자 줄은 위로, 공동명의 줄은 아래로만 커져서 두 서명이 겹치지 않음 */
+.pg .s .w{position:absolute;left:120.5mm;width:29mm;height:10mm;display:flex;justify-content:center;pointer-events:none}
+.pg .s1 .w{bottom:-.3mm;align-items:flex-end}
+.pg .s2 .w{top:-.1mm;align-items:flex-start}
+.pg .s .n{position:absolute;right:3.3mm;font-size:9pt}
+.pg .sg{display:block;max-height:10mm;max-width:29mm;width:auto;height:auto;mix-blend-mode:multiply}
+
+#prt{display:none}
+@media print{
+ @page{size:A4;margin:0}
+ html,body{background:#fff!important}
+ body>*:not(#prt){display:none!important}
+ .intro,.install,.inapp-bar,.sheet{display:none!important}
+ #prt{display:block!important}
+ #prt .pg{zoom:1!important;page-break-after:always;break-after:page}
+ #prt .pg:last-child{page-break-after:auto;break-after:auto}
+}
+</style>
+</head>
+<body class="adm booting">
+<div class="intro" id="intro" aria-hidden="true"><div class="intro-bg"></div><div class="intro-in"><div class="intro-logo"><img src="data:image/png;base64,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" alt="법무법인 제이엘"><span class="shine"></span></div><div class="intro-rule"></div><div class="intro-apt">고양 장항 아테라</div><div class="intro-org">입주예정자협의회</div><div class="intro-by">법률자문 · 법무법인 제이엘</div><div class="intro-skip">화면을 누르면 건너뜁니다</div></div></div>
+<div id="app"></div>
+<div class="inapp-bar" id="inAppBar" hidden><span id="inAppTx">앱 안에서는 앱 설치가 안 됩니다</span><button type="button" onclick="Install.out()">인터넷으로 열기</button><button type="button" class="x" onclick="document.getElementById('inAppBar').hidden=true;document.body.classList.remove('has-inapp')" aria-label="닫기">✕</button></div>
+<div class="install" id="installBar" hidden><img class="ins-ic" src="icon-192.png" alt=""><div class="ins-tx"><b id="insTitle">홈 화면에 추가하기</b><span id="insDesc">한 번 추가하면 앱처럼 바로 열립니다. 설치 용량은 1MB도 되지 않습니다.</span></div><div class="ins-btns"><button class="btn sm" id="insGo" onclick="Install.go()">추가</button><button class="ins-x" onclick="Install.later()" aria-label="닫기">✕</button></div></div>
+<div id="prt"></div>
+<script>window.CFG={"apt":"고양 장항 아테라","short":"고양장항아테라","org":"고양 장항 아테라 입주예정자협의회","newName":"","total":760,"layout":{"301":[[1,3,28],[2,3,28],[3,3,21],[4,3,21],[5,1,21]],"302":[[1,1,29],[2,3,29],[3,1,29]],"303":[[1,1,27],[2,1,27],[3,1,27],[4,3,27],[5,1,27]],"304":[[1,1,24],[2,3,24],[3,1,24],[4,3,24],[5,1,18]],"305":[[1,3,18],[2,3,18],[3,3,18],[4,3,18]],"306":[[1,1,25],[2,1,27],[3,3,27]],"307":[[1,1,26],[2,3,29],[3,3,29]],"308":[[1,3,24],[2,3,24],[3,1,20],[4,3,20],[5,3,20]]},"cafe":"https://cafe.naver.com/jahangartera","worker":"https://jl-atera.treparkjl.workers.dev","residentUrl":"https://kingjin77-rgb.github.io/goyang-atera/","mode":"admin","page":"rsvp"};</script>
+<script>
+(function(){
+'use strict';
+var C=window.CFG,$=function(s,r){return(r||document).querySelector(s)},app=$('#app');
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function h(html){app.innerHTML=html;window.scrollTo(0,0)}
+/* 고치기 시작하면 빨간 안내 지우기 */
+document.addEventListener('input',function(){var e=$('#er');if(e)e.textContent=''},true);
+document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('.dongs,.choice')){var x=$('#er');if(x)x.textContent=''}},true);
+function post(path,body){
+  var ac=window.AbortController?new AbortController():null,t=ac?setTimeout(function(){ac.abort()},30000):0;
+  return fetch(C.worker+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:ac?ac.signal:undefined})
+   .then(function(r){clearTimeout(t);return r.json().catch(function(){return{}}).then(function(j){j._s=r.status;if(!j.ok&&!j.message)j.message='처리하지 못했습니다 ('+r.status+')';return j})},
+         function(){clearTimeout(t);return{ok:false,message:'인터넷 연결을 확인해 주세요'}});
+}
+/* ── 동호수 ── */
+var L=C.layout;
+function hos(d){var a=[];(L[d]||[]).forEach(function(x){for(var f=x[1];f<=x[2];f++)a.push(f*100+x[0])});return a.sort(function(p,q){return p-q})}
+function unitOk(d,ho){return hos(d).indexOf(+ho)>=0}
+/* ── 입력 정리 ── */
+function digits(s){return String(s||'').replace(/\D/g,'')}
+function fmtBirth(s){var d=digits(s);if(d.length===6){var y=+d.slice(0,2);d=(y>30?'19':'20')+d}if(d.length!==8)return'';var y4=+d.slice(0,4),m=+d.slice(4,6),dd=+d.slice(6,8);if(y4<1900||y4>2026||m<1||m>12||dd<1||dd>31)return'';return d.slice(0,4)+'.'+d.slice(4,6)+'.'+d.slice(6,8)}
+function fmtPhone(s){var d=digits(s);if(!/^01\d{8,9}$/.test(d))return'';return d.length===10?d.slice(0,3)+'-'+d.slice(3,6)+'-'+d.slice(6):d.slice(0,3)+'-'+d.slice(3,7)+'-'+d.slice(7)}
+function kdate(s){var m=/^(\d{4})-(\d{2})-(\d{2})/.exec(s||'');return m?m[1]+'년 '+(+m[2])+'월 '+(+m[3])+'일':''}
+/* ── 동의서 1장 ── */
+function deed(v){
+  v=v||{};var j=v.joint||{},N=C.apt;
+  function ck(b){return'<i class="bx'+(b?' on':'')+'"></i>'}
+  function sg(src){return src?'<img class="sg" src="'+esc(src)+'" alt="">':''}
+  function nm(n){n=String(n||'').length;return n>7?' xs':n>5?' sm':''}
+  return '<div class="pg">'+
+  '<div class="ab t" style="top:34.2mm">아파트 명칭 변경 동의서</div>'+
+  '<table class="ti" style="top:49.9mm"><colgroup><col><col><col><col></colgroup>'+
+  '<tr><td class="h">계약자</td><td>'+esc(v.name)+'</td><td class="h">동호수</td><td>'+(v.dong?esc(v.dong+'동 '+v.ho+'호'):'')+'</td></tr>'+
+  '<tr><td class="h">생년월일</td><td>'+esc(v.birth)+'</td><td class="h">연락처</td><td>'+esc(v.phone)+'</td></tr></table>'+
+  '<table class="tj" style="top:70.5mm"><colgroup><col><col><col><col></colgroup>'+
+  '<tr><td class="h">공동명의</td><td>'+esc(j.name)+'</td><td class="h">동호수</td><td>'+(j.name&&v.dong?esc(v.dong+'동 '+v.ho+'호'):'')+'</td></tr>'+
+  '<tr><td class="h">생년월일</td><td>'+esc(j.birth)+'</td><td class="h">연락처</td><td>'+esc(j.phone)+'</td></tr></table>'+
+  '<div class="ab p" style="top:93.4mm">'+N+' 아파트 입주예정자협의회에서는 우리 아파트의 가치를 상승시키는 일환으로 아파트 명칭 변경을 추진하고자 하며, 상기 수분양자는 서면동의 하여 명칭 변경과 관련 입주예정자협의회에 모든 권한을 위임합니다.</div>'+
+  '<table class="tk" style="top:119.2mm"><colgroup><col style="width:16.03mm"><col style="width:57.97mm"><col style="width:74mm"></colgroup>'+
+  '<tr class="r0"><td class="l">구 분</td><td>변경 전 명칭</td><td>변경 후 명칭</td></tr>'+
+  '<tr class="r1"><td class="l">명 칭</td><td>'+N+'</td><td>'+esc(C.newName||'')+'</td></tr>'+
+  '<tr class="r2"><td class="l">항 목</td><td><span class="cb">'+ck(v.agree===false)+'</span><span class="ct">명칭 변경에 동의하지 않습니다.</span></td><td><span class="cb">'+ck(v.agree===true)+'</span><span class="ct">명칭 변경에 동의합니다.</span></td></tr></table>'+
+  '<div class="ab d" style="top:199.4mm">'+(v.date?kdate(v.date):'2026년 &emsp; 월 &emsp; 일')+'</div>'+
+  '<div class="ab s s1" style="top:225.6mm"><span class="k">계약자 :</span><span class="v'+nm(v.name)+'">'+esc(v.name)+'</span><span class="n">(서명 또는 날인)</span><span class="w">'+sg(v.sigUrl)+'</span></div>'+
+  '<div class="ab s s2" style="top:232.3mm"><span class="k">공동명의 :</span><span class="v'+nm(j.name)+'">'+esc(j.name)+'</span><span class="n">(서명 또는 날인)</span><span class="w">'+sg(v.jsigUrl)+'</span></div>'+
+  '<div class="ab f" style="top:256.4mm">'+N+' 입주예정자협의회 귀중</div></div>';
+}
+/* 화면 폭에 맞춰 A4 를 그대로 축소 (인쇄는 원래 크기) */
+function fit(box){var z=box.querySelector('.dz');if(!z)return;var w=box.clientWidth-16,full=793.7;var k=Math.min(1,w/full);z.style.zoom=k}
+window.addEventListener('resize',function(){Array.prototype.forEach.call(document.querySelectorAll('.deedbox'),fit)});
+function printDeeds(list){
+  var p=$('#prt');p.innerHTML=list.map(deed).join('');
+  var imgs=p.querySelectorAll('img'),n=imgs.length,go=function(){setTimeout(function(){window.print()},150)};
+  var ready=document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve();
+  ready.then(function(){if(!n)return go();var k=0;Array.prototype.forEach.call(imgs,function(im){if(im.complete){if(++k===n)go()}else{im.onload=im.onerror=function(){if(++k===n)go()}}})});
+}
+/* ── 서명판 ── */
+function Pad(box){
+  var cv=box.querySelector('canvas'),ctx=cv.getContext('2d'),ph=box.querySelector('.ph'),drawn=false,down=false,last=null,pts=0;
+  function size(){var r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;var keep=drawn?cv.toDataURL():null;cv.width=r.width*d;cv.height=r.height*d;ctx.scale(d,d);ctx.lineWidth=2.6;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#111';if(keep){var im=new Image();im.onload=function(){ctx.drawImage(im,0,0,r.width,r.height)};im.src=keep}}
+  function pos(e){var r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+  cv.addEventListener('pointerdown',function(e){e.preventDefault();down=true;last=pos(e);try{cv.setPointerCapture(e.pointerId)}catch(x){}});
+  cv.addEventListener('pointermove',function(e){if(!down)return;e.preventDefault();var p=pos(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;pts++;if(pts>8&&!drawn){drawn=true;ph.style.display='none'}});
+  ['pointerup','pointercancel','pointerleave'].forEach(function(t){cv.addEventListener(t,function(){down=false})});
+  box.querySelector('.clr').onclick=function(){ctx.clearRect(0,0,cv.width,cv.height);drawn=false;pts=0;ph.style.display=''};
+  size();
+  return{ok:function(){return drawn},png:function(){
+    /* 여백 잘라내고 가로 600px 이하로 줄여 저장 */
+    var w=cv.width,hh=cv.height,d=ctx.getImageData(0,0,w,hh).data,x0=w,y0=hh,x1=0,y1=0;
+    for(var y=0;y<hh;y+=2)for(var x=0;x<w;x+=2){if(d[(y*w+x)*4+3]>20){if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}}
+    if(x1<=x0||y1<=y0)return null;var m=8;x0=Math.max(0,x0-m);y0=Math.max(0,y0-m);x1=Math.min(w,x1+m);y1=Math.min(hh,y1+m);
+    var cw=x1-x0,ch=y1-y0,k=Math.min(1,600/cw,240/ch),o=document.createElement('canvas');o.width=Math.round(cw*k);o.height=Math.round(ch*k);
+    o.getContext('2d').drawImage(cv,x0,y0,cw,ch,0,0,o.width,o.height);return o.toDataURL('image/png')}};
+}
+function padHtml(id,label){return '<label class="f">'+label+'</label><div class="pad" id="'+id+'"><canvas></canvas><div class="ph">여기에 손가락으로 서명해 주세요</div><button type="button" class="btn ghost sm clr">다시 쓰기</button></div>'}
+function head(){var rs=C.page==='rsvp';return '<div class="top"><div class="wrap"><div class="org">'+esc(C.org)+'</div><h1>'+(rs?(C.mode==='admin'?'총회 참석 신청 · 관리자':'입주예정자협의회 총회 참석 신청'):(C.mode==='admin'?'명칭 변경 동의서 · 관리자':'아파트 명칭 변경 동의서'))+'</h1>'+
+  (C.mode==='admin'?'':'<div class="sub">'+(rs?'꼭 참석하실 수 있는 세대만 신청해 주세요':'온라인으로 작성하고 서명하면 협의회에 바로 제출됩니다')+'</div>')+
+  '<div class="bar"><button type="button" class="chip ins" onclick="Install.ask()"'+(Install.standalone()?' hidden':'')+'>📲 앱 설치</button><a class="chip" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페</a>'+(C.mode==='admin'?'<a class="chip" href="'+esc(C.residentUrl)+'" target="_blank" rel="noopener">입주민 화면</a>'+(rs?'':'<a class="chip" href="rsvp.html" target="_blank" rel="noopener">📣 총회 신청 현황</a>'):'')+'</div></div></div>'}
+function foot(){return '<div class="foot">'+esc(C.org)+' · 운영지원 법무법인 제이엘</div>'}
+
+/* ═════════ 입주민 화면 ═════════ */
+var V={};
+function steps(n){var s='';for(var i=1;i<=4;i++)s+='<i'+(i<=n?' class="on"':'')+'></i>';return'<div class="steps">'+s+'</div>'}
+function intro(){
+  h(head()+'<div class="wrap">'+
+  '<div class="card"><h2>동의서 내용</h2><div class="stmt">'+esc(C.apt)+' 아파트 입주예정자협의회에서는 우리 아파트의 가치를 상승시키는 일환으로 아파트 명칭 변경을 추진하고자 하며, 상기 수분양자는 서면동의 하여 명칭 변경과 관련 입주예정자협의회에 모든 권한을 위임합니다.</div>'+
+  '<p class="muted" style="margin:10px 0 0">변경 후 명칭은 정해지는 대로 카페에 안내됩니다. 공동명의인 경우 두 분 모두 서명해 주세요.</p>'+
+  '<div id="cnt"></div>'+
+  '<button class="btn" id="go">동의서 작성하기</button>'+
+  '<a class="btn ghost" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페 바로가기</a></div>'+
+  '<div class="card rsvp-cta"><h2>📣 입주예정자협의회 총회 참석 신청</h2><p class="muted" style="margin:0">2월 중 토요일 (예정) · 참석 인원에 따라 장소를 대관합니다.</p><a class="btn" href="rsvp.html" target="_blank" rel="noopener">총회 참석 신청하기 (새 창)</a></div>'+
+  '<div class="card"><h2>명칭 변경은 이렇게 진행됩니다</h2><ol class="flow">'+
+  [['동의서 제출','입주예정자가 온라인 또는 서면으로 동의 여부를 제출합니다',1],
+   ['동의 현황 집계','협의회가 세대별 제출 현황을 확인하고 정리합니다',0],
+   ['시행사 · 시공사 협의','모인 동의서를 근거로 협의회가 명칭 변경을 요청하고 협의합니다',0],
+   ['관할 기관 절차','관련 기관에 필요한 절차를 진행합니다',0],
+   ['새 명칭 확정 · 안내','확정된 명칭을 카페로 알려드립니다',0]].map(function(x,i){return'<li'+(x[2]?' class="now"':'')+'><span class="n">'+(i+1)+'</span><span class="tx"><b>'+x[0]+(x[2]?'<em class="now-t" style="font-style:normal">지금 단계</em>':'')+'</b><span>'+x[1]+'</span></span></li>'}).join('')+
+  '</ol><p class="muted" style="margin:12px 0 0">세부 일정과 진행 상황은 협의회 카페 공지를 기준으로 합니다.</p></div>'+
+  foot()+'</div>');
+  $('#go').onclick=function(){form1()};
+  fetch(C.worker+'/stats',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){
+    if(!j||!j.ok)return;var p=Math.min(100,j.n/j.total*100);
+    $('#cnt').innerHTML='<div class="cnt"><b>'+j.n+'</b><span class="muted">세대 제출 / 총 '+j.total+'세대 ('+p.toFixed(1)+'%)</span></div><div class="prog"><i style="width:'+p+'%"></i></div>';
+  }).catch(function(){});
+}
+function form1(){
+  var dongs=Object.keys(L);
+  h(head()+'<div class="wrap">'+steps(1)+
+  '<div class="card"><h2>1. 계약자 정보</h2>'+
+  '<label class="f">동</label><div class="dongs">'+dongs.map(function(d){return'<button type="button" data-d="'+d+'"'+(V.dong===d?' class="on"':'')+'>'+d+'동</button>'}).join('')+'</div>'+
+  '<label class="f">호수</label><select class="t" id="ho"></select>'+
+  '<label class="f">계약자 이름</label><input class="t" id="nm" autocomplete="name" maxlength="20" value="'+esc(V.name)+'">'+
+  '<div class="row2"><div><label class="f">생년월일 (8자리)</label><input class="t" id="bi" inputmode="numeric" placeholder="19800101" maxlength="10" value="'+esc(digits(V.birth))+'"></div>'+
+  '<div><label class="f">연락처</label><input class="t" id="ph" inputmode="tel" placeholder="01012345678" maxlength="13" value="'+esc(digits(V.phone))+'"></div></div>'+
+  '<label class="tog"><input type="checkbox" id="jt"'+(V.joint?' checked':'')+'> 공동명의입니다</label>'+
+  '<div id="jbox" class="'+(V.joint?'':'hide')+'">'+
+  '<label class="f">공동명의자 이름</label><input class="t" id="jn" maxlength="20" value="'+esc(V.joint&&V.joint.name)+'">'+
+  '<div class="row2"><div><label class="f">생년월일 (8자리)</label><input class="t" id="jb" inputmode="numeric" placeholder="19800101" maxlength="10" value="'+esc(V.joint&&digits(V.joint.birth))+'"></div>'+
+  '<div><label class="f">연락처</label><input class="t" id="jp" inputmode="tel" placeholder="01012345678" maxlength="13" value="'+esc(V.joint&&digits(V.joint.phone))+'"></div></div></div>'+
+  '<div class="err" id="er"></div><button class="btn" id="nx">다음</button></div>'+foot()+'</div>');
+  function fillHo(){var s=$('#ho');if(!V.dong){s.innerHTML='<option value="">동을 먼저 고르세요</option>';s.disabled=true;return}
+    s.disabled=false;s.innerHTML='<option value="">호수 선택</option>'+hos(V.dong).map(function(x){return'<option'+(String(x)===String(V.ho)?' selected':'')+'>'+x+'</option>'}).join('')}
+  Array.prototype.forEach.call(document.querySelectorAll('.dongs button'),function(b){b.onclick=function(){V.dong=b.getAttribute('data-d');V.ho='';Array.prototype.forEach.call(document.querySelectorAll('.dongs button'),function(x){x.classList.toggle('on',x===b)});fillHo()}});
+  fillHo();
+  $('#jt').onchange=function(){$('#jbox').classList.toggle('hide',!this.checked)};
+  $('#nx').onclick=function(){
+    var er=$('#er'),ho=$('#ho').value,nm=$('#nm').value.trim(),bi=fmtBirth($('#bi').value),ph=fmtPhone($('#ph').value);
+    if(!V.dong||!ho||!unitOk(V.dong,ho))return er.textContent='동과 호수를 골라 주세요';
+    if(nm.length<2)return er.textContent='계약자 이름을 적어 주세요';
+    if(!bi)return er.textContent='생년월일 8자리를 확인해 주세요 (예: 19800101)';
+    if(!ph)return er.textContent='연락처를 확인해 주세요 (예: 01012345678)';
+    var jt=null;
+    if($('#jt').checked){var jn=$('#jn').value.trim(),jb=fmtBirth($('#jb').value),jp=fmtPhone($('#jp').value);
+      if(jn.length<2)return er.textContent='공동명의자 이름을 적어 주세요';
+      if(!jb)return er.textContent='공동명의자 생년월일 8자리를 확인해 주세요';
+      if(!jp)return er.textContent='공동명의자 연락처를 확인해 주세요';
+      jt={name:jn,birth:jb,phone:jp}}
+    V.ho=ho;V.name=nm;V.birth=bi;V.phone=ph;V.joint=jt;form2();
+  };
+}
+function form2(){
+  h(head()+'<div class="wrap">'+steps(2)+
+  '<div class="card"><h2>2. 동의 여부</h2><p class="muted" style="margin:0">'+esc(V.dong+'동 '+V.ho+'호 · '+V.name)+(V.joint?' · 공동명의 '+esc(V.joint.name):'')+'</p>'+
+  '<div class="choice"><button type="button" data-a="1"'+(V.agree===true?' class="on"':'')+'><span class="bx"></span>명칭 변경에 동의합니다.</button>'+
+  '<button type="button" data-a="0"'+(V.agree===false?' class="on"':'')+'><span class="bx"></span>명칭 변경에 동의하지 않습니다.</button></div>'+
+  '<h3>개인정보 수집 · 이용 동의 (필수)</h3><div class="pv"><b>수집 항목</b> 계약자 · 공동명의자 이름, 생년월일, 연락처, 동호수, 서명<br><b>이용 목적</b> 아파트 명칭 변경 동의 여부 확인 및 동의서 제출<br><b>보관 기간</b> 명칭 변경 절차가 끝날 때까지 (끝나면 지체 없이 파기)<br>동의하지 않으실 수 있으나, 이 경우 온라인 제출이 되지 않습니다.</div>'+
+  '<label class="tog"><input type="checkbox" id="pv"'+(V.privacy?' checked':'')+'> 개인정보 수집 · 이용에 동의합니다</label>'+
+  '<div class="err" id="er"></div><div class="btns"><button class="btn ghost" id="bk">이전</button><button class="btn" id="nx">다음</button></div></div>'+foot()+'</div>');
+  Array.prototype.forEach.call(document.querySelectorAll('.choice button'),function(b){b.onclick=function(){V.agree=b.getAttribute('data-a')==='1';Array.prototype.forEach.call(document.querySelectorAll('.choice button'),function(x){x.classList.toggle('on',x===b)})}});
+  $('#bk').onclick=form1;
+  $('#nx').onclick=function(){var er=$('#er');if(V.agree!==true&&V.agree!==false)return er.textContent='동의 여부를 골라 주세요';if(!$('#pv').checked)return er.textContent='개인정보 수집 · 이용에 동의해 주셔야 제출할 수 있습니다';V.privacy=true;form3()};
+}
+function form3(){
+  h(head()+'<div class="wrap">'+steps(3)+
+  '<div class="card"><h2>3. 서명</h2><p class="muted" style="margin:0">동의서의 서명란에 그대로 들어갑니다.</p>'+
+  padHtml('p1','계약자 서명 · '+esc(V.name))+(V.joint?padHtml('p2','공동명의자 서명 · '+esc(V.joint.name)):'')+
+  '<div class="err" id="er"></div><div class="btns"><button class="btn ghost" id="bk">이전</button><button class="btn" id="nx">동의서 미리보기</button></div></div>'+foot()+'</div>');
+  var p1=Pad($('#p1')),p2=V.joint?Pad($('#p2')):null;
+  $('#bk').onclick=form2;
+  $('#nx').onclick=function(){var er=$('#er');if(!p1.ok())return er.textContent='계약자 서명을 해 주세요';if(p2&&!p2.ok())return er.textContent='공동명의자 서명을 해 주세요';
+    V.sig=p1.png();V.jsig=p2?p2.png():null;if(!V.sig||(p2&&!V.jsig))return er.textContent='서명을 다시 해 주세요';form4()};
+}
+function today(){return new Date(Date.now()+9*3600e3).toISOString().slice(0,10)}
+function form4(){
+  var v={dong:V.dong,ho:V.ho,name:V.name,birth:V.birth,phone:V.phone,joint:V.joint,agree:V.agree,date:today(),sigUrl:V.sig,jsigUrl:V.jsig};
+  h(head()+'<div class="wrap">'+steps(4)+
+  '<div class="card"><h2>4. 확인 후 제출</h2><p class="muted" style="margin:0">아래 동의서 그대로 협의회에 제출됩니다. 내용을 확인해 주세요.</p>'+
+  '<div class="deedbox"><div class="dz">'+deed(v)+'</div></div><p class="muted" style="margin:6px 0 0;text-align:center">작게 보이면 두 손가락으로 벌려 확대해 보세요</p>'+
+  '<div class="err" id="er"></div><div class="btns"><button class="btn ghost" id="bk">고치기</button><button class="btn" id="nx">제출하기</button></div></div>'+foot()+'</div>');
+  fit($('.deedbox'));
+  $('#bk').onclick=form1;
+  $('#nx').onclick=function(){var b=this,er=$('#er');b.disabled=true;b.textContent='제출 중…';er.textContent='';
+    post('/submit',{dong:V.dong,ho:V.ho,name:V.name,birth:V.birth,phone:V.phone,joint:V.joint,agree:V.agree,privacy:true,sig:V.sig,jsig:V.jsig}).then(function(j){
+      if(!j.ok){b.disabled=false;b.textContent='제출하기';er.textContent=j.message;return}
+      v.date=j.date||v.date;done(v,j.no)})};
+}
+function done(v,no){
+  h(head()+'<div class="wrap"><div class="card done"><div class="ic">✓</div><h2>제출되었습니다</h2>'+
+  '<p class="muted">'+esc(v.dong+'동 '+v.ho+'호 · '+v.name)+'<br>접수번호 '+esc(no)+'</p>'+
+  '<div class="deedbox"><div class="dz">'+deed(v)+'</div></div>'+
+  '<button class="btn" id="pr">동의서 저장 · 인쇄</button><a class="btn ghost" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페로 돌아가기</a></div>'+foot()+'</div>');
+  fit($('.deedbox'));
+  $('#pr').onclick=function(){printDeeds([v])};
+  V={};
+}
+
+/* ═════════ 관리자 화면 ═════════ */
+var A={pin:'',list:[],sum:null,f:{dong:'',ag:'',q:'',voids:false}},SIG={};
+function login(msg){
+  h(head()+'<div class="wrap" style="max-width:420px"><div class="card"><h2>관리자 로그인</h2><p class="muted" style="margin:0">협의회 임원에게 직접 전달된 관리자 코드를 넣어 주세요.</p>'+
+  '<input class="t" id="pin" type="password" inputmode="numeric" autocomplete="off" style="margin-top:12px"><div class="err" id="er">'+esc(msg||'')+'</div><button class="btn" id="go">들어가기</button></div>'+foot()+'</div>');
+  var go=function(){var b=$('#go');b.disabled=true;A.pin=$('#pin').value.trim();load().then(function(j){if(!j.ok){A.pin='';b.disabled=false;$('#er').textContent=j.message}})};
+  $('#go').onclick=go;$('#pin').onkeydown=function(e){if(e.key==='Enter')go()};
+}
+function load(){return post('/admin',{pin:A.pin,op:'list'}).then(function(j){if(j.ok){A.list=j.list;A.sum=j.sum;mark();dash()}return j})}
+function mark(){var last={};A.list.forEach(function(r){r.dup=false;if(!r.void)last[r.dong+'-'+r.ho]=r});A.list.forEach(function(r){if(!r.void&&last[r.dong+'-'+r.ho]!==r)r.dup=true})}
+function rows(){var f=A.f,q=f.q.trim();return A.list.filter(function(r){
+  if(!f.voids&&r.void)return false;if(f.dong&&r.dong!==f.dong)return false;if(f.ag==='a'&&!r.agree)return false;if(f.ag==='d'&&r.agree)return false;
+  if(q){var s=r.dong+'-'+r.ho+' '+r.dong+'동 '+r.ho+'호 '+r.name+' '+(r.joint?r.joint.name:'')+' '+r.phone;if(s.indexOf(q)<0)return false}return true}).sort(function(a,b){return b.no-a.no})}
+function dash(){
+  var s=A.sum,T=C.total,pa=s.agree/T*100;
+  var dongs=Object.keys(L),f=A.f;
+  h(head()+'<div class="wrap">'+
+  '<div class="kpis" style="margin-top:14px"><div class="kpi"><small>총 세대</small><b>'+T+'</b></div><div class="kpi"><small>제출 세대</small><b>'+s.n+'</b> <span class="muted">'+(s.n/T*100).toFixed(1)+'%</span></div>'+
+  '<div class="kpi"><small>동의 (전체 세대 대비)</small><b style="color:var(--ok)">'+s.agree+'</b> <span class="muted">'+pa.toFixed(1)+'%</span></div><div class="kpi"><small>부동의</small><b style="color:var(--no)">'+s.disagree+'</b></div></div>'+
+  '<div class="card"><h2>동별 현황</h2><div class="scroll" style="max-height:none"><table class="l"><tr><th>동</th><th>세대</th><th>제출</th><th>동의</th><th>부동의</th><th>동의율</th></tr>'+
+  dongs.map(function(d){var b=s.byDong[d]||{n:0,a:0,d:0},n=hos(d).length;return'<tr><td>'+d+'동</td><td>'+n+'</td><td>'+b.n+'</td><td>'+b.a+'</td><td>'+b.d+'</td><td>'+(b.a/n*100).toFixed(1)+'%</td></tr>'}).join('')+'</table></div></div>'+
+  '<div class="card"><h2>제출 목록</h2><div class="flt">'+
+  '<select id="fd"><option value="">전체 동</option>'+dongs.map(function(d){return'<option'+(f.dong===d?' selected':'')+' value="'+d+'">'+d+'동</option>'}).join('')+'</select>'+
+  '<select id="fa"><option value="">동의·부동의 전체</option><option value="a"'+(f.ag==='a'?' selected':'')+'>동의만</option><option value="d"'+(f.ag==='d'?' selected':'')+'>부동의만</option></select>'+
+  '<input id="fq" placeholder="이름 · 호수 · 연락처" value="'+esc(f.q)+'">'+
+  '<label class="muted"><input type="checkbox" id="fv"'+(f.voids?' checked':'')+'> 무효 포함</label>'+
+  '<span style="flex:1"></span><button class="btn ghost sm" id="rf">새로고침</button><button class="btn ghost sm" id="csv">엑셀(CSV)</button><button class="btn sm" id="pa">목록 동의서 인쇄</button></div>'+
+  '<div id="tb"></div><div id="ms"></div></div>'+foot()+'</div>');
+  $('#fd').onchange=function(){f.dong=this.value;table()};$('#fa').onchange=function(){f.ag=this.value;table()};
+  $('#fq').oninput=function(){f.q=this.value;table()};$('#fv').onchange=function(){f.voids=this.checked;table()};
+  $('#rf').onclick=function(){this.disabled=true;load()};
+  $('#csv').onclick=csv;$('#pa').onclick=printList;
+  table();
+}
+function table(){
+  var r=rows();
+  $('#tb').innerHTML='<p class="muted" style="margin:8px 0 0">'+r.length+'건'+(A.f.dong?'':' · 인쇄는 동을 골라 한 동씩 하는 것을 권합니다')+'</p><div class="scroll"><table class="l"><tr><th>접수</th><th>동호수</th><th>계약자</th><th>생년월일</th><th>연락처</th><th>공동명의</th><th>동의</th><th>제출일시</th><th></th></tr>'+
+  r.map(function(x){return'<tr class="'+(x.void?'v':x.dup?'dup':'')+'"><td>'+x.no+'</td><td>'+esc(x.dong+'동 '+x.ho+'호')+'</td><td>'+esc(x.name)+'</td><td>'+esc(x.birth)+'</td><td>'+esc(x.phone)+'</td><td>'+esc(x.joint?x.joint.name:'')+'</td><td>'+
+   (x.void?'<span class="tag g">무효</span>':x.dup?'<span class="tag g">이전 제출</span>':x.agree?'<span class="tag a">동의</span>':'<span class="tag d">부동의</span>')+'</td><td>'+esc(x.at)+'</td><td><button class="btn ghost sm" data-v="'+x.no+'">보기</button> '+
+   (x.void?'<button class="btn ghost sm" data-r="'+x.no+'">되살리기</button>':'<button class="btn ghost sm" data-x="'+x.no+'">무효</button>')+'</td></tr>'}).join('')+'</table></div>';
+  Array.prototype.forEach.call(document.querySelectorAll('[data-v]'),function(b){b.onclick=function(){view(+b.getAttribute('data-v'))}});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-x]'),function(b){b.onclick=function(){setVoid(+b.getAttribute('data-x'),'void')}});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-r]'),function(b){b.onclick=function(){setVoid(+b.getAttribute('data-r'),'restore')}});
+  /* 미제출 호수 (동 고르면) */
+  var ms=$('#ms');if(!A.f.dong){ms.innerHTML='';return}
+  var got={};A.list.forEach(function(x){if(!x.void&&x.dong===A.f.dong)got[x.ho]=1});
+  var miss=hos(A.f.dong).filter(function(x){return!got[x]});
+  ms.innerHTML='<h3>'+A.f.dong+'동 미제출 '+miss.length+'세대</h3><div class="miss">'+miss.join(' · ')+'</div>';
+}
+function byNo(n){for(var i=0;i<A.list.length;i++)if(A.list[i].no===n)return A.list[i]}
+function sigOf(file){if(!file)return Promise.resolve('');if(SIG[file])return Promise.resolve(SIG[file]);
+  return post('/admin',{pin:A.pin,op:'sig',file:file}).then(function(j){if(!j.ok)return'';return SIG[file]='data:image/png;base64,'+j.b64})}
+function withSig(r){return Promise.all([sigOf(r.sig),sigOf(r.jsig)]).then(function(s){var v={};for(var k in r)v[k]=r[k];v.sigUrl=s[0];v.jsigUrl=s[1];return v})}
+function view(n){
+  var r=byNo(n);if(!r)return;
+  var m=document.createElement('div');m.className='modal';m.innerHTML='<div class="mh"><span class="muted" style="margin-right:auto">'+esc(r.dong+'동 '+r.ho+'호 · '+r.name+' · 접수 '+r.no)+'</span><button class="btn sm" id="mp" disabled>인쇄</button><button class="btn ghost sm" id="mc">닫기</button></div><div class="mb"><div class="deedbox"><div class="dz"><p class="muted" style="padding:20px">서명 불러오는 중…</p></div></div></div>';
+  document.body.appendChild(m);$('#mc',m).onclick=function(){m.remove()};
+  withSig(r).then(function(v){$('.dz',m).innerHTML=deed(v);fit($('.deedbox',m));var b=$('#mp',m);b.disabled=false;b.onclick=function(){printDeeds([v])}});
+}
+function setVoid(n,op){
+  var r=byNo(n);if(!r)return;var memo=prompt((op==='void'?'무효 처리':'되살리기')+' — '+r.dong+'동 '+r.ho+'호 '+r.name+'\n사유를 적어 주세요 (기록에 남습니다)','');if(memo===null)return;
+  post('/admin',{pin:A.pin,op:op,no:n,memo:memo}).then(function(j){if(!j.ok)return alert(j.message);load()});
+}
+function printList(){
+  var r=rows().filter(function(x){return!x.void&&!x.dup});if(!r.length)return alert('인쇄할 동의서가 없습니다');
+  if(r.length>150&&!confirm(r.length+'장입니다. 서명을 불러오는 데 시간이 걸립니다. 계속할까요?'))return;
+  var b=$('#pa'),i=0,out=new Array(r.length),busy=0;b.disabled=true;
+  r.sort(function(a,c){return a.dong-c.dong||a.ho-c.ho});
+  function next(){if(i>=r.length){if(!busy){b.disabled=false;b.textContent='목록 동의서 인쇄';printDeeds(out)}return}
+    var k=i++;busy++;withSig(r[k]).then(function(v){out[k]=v;busy--;b.textContent='준비 중 '+(r.length-i+busy>0?i:r.length)+'/'+r.length;next()})}
+  for(var t=0;t<4;t++)next();
+}
+function csv(){
+  var r=rows().slice().sort(function(a,c){return a.dong-c.dong||a.ho-c.ho||a.no-c.no});
+  var head=['접수번호','동','호','계약자','생년월일','연락처','공동명의','공동 생년월일','공동 연락처','동의여부','제출일시','상태'];
+  var q=function(s){s=String(s==null?'':s);if(/^[=+\-@]/.test(s))s="'"+s;return'"'+s.replace(/"/g,'""')+'"'};
+  var lines=[head.map(q).join(',')].concat(r.map(function(x){var j=x.joint||{};return[x.no,x.dong,x.ho,x.name,x.birth,x.phone,j.name,j.birth,j.phone,x.agree?'동의':'부동의',x.at,x.void?'무효':x.dup?'이전 제출':'유효'].map(q).join(',')}));
+  var blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='명칭변경동의_'+C.short+'_'+today()+'.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
+}
+
+/* ═════════ 인트로 · 앱 설치 (영통 등 플랫폼 공통 동작) ═════════ */
+function sheet(title,html){var m=document.createElement('div');m.className='sheet';m.innerHTML='<div class="sh"><h3>'+title+'</h3>'+html+'<button class="btn ghost" type="button" style="margin-top:14px">닫기</button></div>';
+  m.onclick=function(e){if(e.target===m||e.target.textContent==='닫기'&&e.target.tagName==='BUTTON')m.remove()};document.body.appendChild(m)}
+function toast(t){var d=document.createElement('div');d.textContent=t;d.style.cssText='position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#16264F;color:#fff;padding:10px 16px;border-radius:999px;font-size:14px;z-index:150;max-width:90vw';document.body.appendChild(d);setTimeout(function(){d.remove()},2600)}
+function splash(done){
+  var el=$('#intro'),seen=false,red=false;
+  try{seen=sessionStorage.getItem('jl2_intro')==='1'}catch(e){}
+  try{red=window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){}
+  function fin(){document.body.classList.remove('booting');document.body.classList.add('booted');if(done){var f=done;done=null;f()}}
+  if(!el||seen||red){if(el)el.classList.add('gone');fin();return}
+  try{sessionStorage.setItem('jl2_intro','1')}catch(e){}
+  el.classList.add('out');
+  setTimeout(fin,4900);setTimeout(function(){el.classList.add('gone')},5900);
+  el.addEventListener('pointerdown',function(){el.classList.add('gone');fin()},{once:true});
+}
+var Install={ev:null,
+  standalone:function(){try{return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true}catch(e){return false}},
+  isIOS:function(){return /iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream},
+  dismissed:function(){try{return localStorage.getItem('jl2_ins_atera')==='no'}catch(e){return false}},
+  inApp:function(){var u=navigator.userAgent||'';return /KAKAOTALK/i.test(u)?'kakao':/NAVER\(inapp|NAVER/.test(u)?'naver':/BAND\//i.test(u)?'band':/Instagram|FBAN|FBAV|Line\/|DaumApps|everytimeApp|; wv\)/i.test(u)?'app':''},
+  browser:function(){var u=navigator.userAgent||'';if(this.isIOS())return /CriOS/.test(u)?'ios-chrome':/FxiOS|EdgiOS|NAVER|KAKAO|Whale/i.test(u)?'ios-other':'ios-safari';return /SamsungBrowser/i.test(u)?'samsung':/Whale/i.test(u)?'whale':/Android/i.test(u)?'android-chrome':'desktop'},
+  steps:function(){var b=this.browser();
+    return '<div class="ins-how"><div class="ins-b">'+{samsung:'삼성 인터넷','android-chrome':'크롬',whale:'웨일','ios-safari':'아이폰 사파리','ios-chrome':'아이폰 크롬','ios-other':'아이폰',desktop:'PC'}[b]+'에서 설치하는 방법</div><ol>'+
+    {samsung:['화면 아래 <b>≡ (줄 세 개)</b> 메뉴를 누릅니다','<b>「현재 페이지 추가」</b>를 누릅니다','<b>「홈 화면」</b>을 고르고 <b>「추가」</b>를 누릅니다'],
+     'android-chrome':['오른쪽 위 <b>⋮ (점 세 개)</b>를 누릅니다','<b>「홈 화면에 추가」</b> 또는 <b>「앱 설치」</b>를 누릅니다','<b>「설치」</b>(또는 「추가」)를 누릅니다'],
+     whale:['아래 <b>≡</b> 메뉴를 누릅니다','<b>「홈 화면에 추가」</b>를 누릅니다','<b>「추가」</b>를 누릅니다'],
+     'ios-safari':['화면 아래 가운데 <b>공유 버튼 (□↑)</b>을 누릅니다','목록을 위로 올려 <b>「홈 화면에 추가」</b>를 누릅니다','오른쪽 위 <b>「추가」</b>를 누릅니다'],
+     'ios-chrome':['주소창 오른쪽 <b>공유 버튼 (□↑)</b>을 누릅니다','<b>「홈 화면에 추가」</b>를 누릅니다','<b>「추가」</b>를 누릅니다'],
+     'ios-other':['이 앱에서는 설치가 안 됩니다 — <b>사파리</b>로 이 주소를 엽니다','사파리 아래 <b>공유 (□↑)</b> → <b>「홈 화면에 추가」</b>','<b>「추가」</b>를 누릅니다'],
+     desktop:['주소창 오른쪽 끝의 <b>설치 아이콘 (⊕ 또는 모니터 모양)</b>을 누릅니다','안 보이면 오른쪽 위 <b>⋮ → 「앱 설치」</b> (또는 「저장 및 공유 → 바로가기 만들기」)','<b>「설치」</b>를 누릅니다']}[b].map(function(x){return'<li>'+x+'</li>'}).join('')+'</ol>'+
+    (b==='ios-other'?'<button class="btn ghost" type="button" onclick="Install.copy()">주소 복사</button>':'')+'<p>설치하면 홈 화면에 아이콘이 생기고, 누르면 앱처럼 바로 열립니다.<br>앱 장터 설치가 아니라 용량이 거의 들지 않습니다.</p></div>'},
+  toChrome:function(){var u=location.href;if(this.inApp()!=='kakao')location.href='intent://'+u.replace(/^https?:\/\//,'')+'#Intent;scheme=https;package=com.android.chrome;end';else location.href='kakaotalk://web/openExternal?url='+encodeURIComponent(u)},
+  out:function(){if(this.isIOS()){if(this.inApp()==='kakao'){location.href='kakaotalk://web/openExternal?url='+encodeURIComponent(location.href);return}this.ask();return}this.toChrome()},
+  copy:function(){var u=location.href.split('#')[0];if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(u).then(function(){toast('주소를 복사했습니다 — 사파리 · 크롬 주소창에 붙여넣으세요')},function(){prompt('주소를 복사하세요',u)});else prompt('주소를 복사하세요',u)},
+  ask:function(){
+    if(this.standalone())return toast('이미 앱으로 열려 있습니다');
+    if(this.ev)return this.go();
+    var a=this.inApp(),ios=this.isIOS();
+    if(a){var nm={kakao:'카카오톡',naver:'네이버 앱',band:'밴드'}[a]||'이 앱';
+      sheet('앱 설치는 인터넷 앱에서 됩니다','<p style="line-height:1.8;color:var(--ink2);margin:0">지금 <b>'+nm+' 안의 화면</b>으로 열려 있어 설치가 막혀 있습니다.<br>'+(ios?'<b>사파리</b>로 열어서 <b>공유(□↑) → 홈 화면에 추가</b>를 눌러 주세요.':'아래 버튼을 누르면 <b>크롬</b>으로 열립니다. 크롬에서 다시 「📲 앱 설치」를 눌러 주세요.')+'</p>'+
+        (ios?(a==='kakao'?'<button class="btn" type="button" onclick="location.href=\'kakaotalk://web/openExternal?url=\'+encodeURIComponent(location.href)">사파리로 열기</button>':'')+'<button class="btn ghost" type="button" onclick="Install.copy()">주소 복사</button>'
+            :'<button class="btn" type="button" onclick="Install.toChrome()">크롬으로 열기</button><button class="btn ghost" type="button" onclick="Install.copy()">주소 복사</button>'));
+    }else sheet('📲 앱 설치',this.steps());
+  },
+  init:function(){
+    if('serviceWorker' in navigator&&location.protocol.indexOf('http')===0)window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})});
+    if(this.standalone())return;
+    var a=this.inApp(),bar=$('#inAppBar'),me=this;
+    if(a&&bar){bar.hidden=false;document.body.classList.add('has-inapp');$('#inAppTx').textContent=({kakao:'카카오톡',naver:'네이버 앱',band:'밴드'}[a]||'이 앱')+' 안에서는 앱 설치가 안 됩니다'}
+    window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();me.ev=e;if(!me.dismissed())me.show()});
+    window.addEventListener('appinstalled',function(){me.ev=null;$('#installBar').hidden=true;Array.prototype.forEach.call(document.querySelectorAll('.chip.ins'),function(x){x.hidden=true})});
+    if(!this.dismissed()&&this.isIOS()&&!a)setTimeout(function(){me.show(true)},5200);
+  },
+  show:function(ios){var b=$('#installBar');if(!b||this.inApp())return;   /* 카톡 등 앱 안에서는 「인터넷으로 열기」 바만 */
+    if(ios){$('#insTitle').textContent='홈 화면에 추가하기';$('#insDesc').textContent='아래 공유 버튼 → 「홈 화면에 추가」를 누르시면 앱처럼 열립니다.';$('#insGo').textContent='방법 보기'}b.hidden=false},
+  go:function(){var me=this;if(!this.ev&&this.inApp()){$('#installBar').hidden=true;this.ask();return}
+    if(this.ev){this.ev.prompt();this.ev.userChoice.then(function(c){$('#installBar').hidden=true;me.ev=null;if(c&&c.outcome==='accepted')toast('홈 화면에 추가되었습니다')})}
+    else{sheet('📲 앱 설치',this.steps());$('#installBar').hidden=true}},
+  later:function(){$('#installBar').hidden=true;try{localStorage.setItem('jl2_ins_atera','no')}catch(e){}}
+};
+window.Install=Install;
+window.JLDeed=deed;   /* 점검용 — 동의서 1장 그리기 */
+Install.init();
+/* ═════════ 총회 참석 신청 (별도 링크 rsvp.html) ═════════ */
+var RV={};
+function rvInfo(){return '<div class="card"><h2>총회 안내</h2><table class="rv-t">'+
+  '<tr><th>일시</th><td>2월 중 토요일 <span class="muted">(예정 · 확정되면 카페 공지)</span></td></tr>'+
+  '<tr><th>내용</th><td><ul class="rv-ul"><li>박람회 안내</li><li>법무법인 제이엘 — 대출 관련 안내</li><li>입주예정자협의회 — 활동 성과 발표</li></ul></td></tr>'+
+  '<tr><th>장소</th><td>참석 인원에 따라 대관 예정</td></tr>'+
+  '<tr><th>신청 기간</th><td>2026년 11월 첫째 주 <span class="muted">(예정)</span></td></tr></table>'+
+  '<div class="stmt" style="margin-top:12px">참석 인원에 맞춰 장소를 대관하려고 합니다. <b>꼭 참석하실 수 있는 분만</b> 신청 부탁드립니다.</div><div id="rvCnt"></div></div>'}
+function rvForm(){
+  var dongs=Object.keys(L);
+  h(head()+'<div class="wrap">'+rvInfo()+
+  '<div class="card"><h2>참석 신청</h2>'+
+  '<label class="f">동</label><div class="dongs">'+dongs.map(function(d){return'<button type="button" data-d="'+d+'"'+(RV.dong===d?' class="on"':'')+'>'+d+'동</button>'}).join('')+'</div>'+
+  '<label class="f">호수</label><select class="t" id="ho"></select>'+
+  '<label class="f">이름</label><input class="t" id="nm" autocomplete="name" maxlength="20" value="'+esc(RV.name)+'">'+
+  '<div class="row2"><div><label class="f">연락처</label><input class="t" id="ph" inputmode="tel" placeholder="01012345678" maxlength="13" value="'+esc(digits(RV.phone))+'"></div>'+
+  '<div><label class="f">참석 인원</label><select class="t" id="cn">'+[1,2,3,4,5].map(function(n){return'<option value="'+n+'"'+(+RV.count===n?' selected':'')+'>'+n+'명</option>'}).join('')+'</select></div></div>'+
+  '<label class="tog"><input type="checkbox" id="su"> 꼭 참석할 수 있습니다</label>'+
+  '<div class="pv"><b>수집 항목</b> 동호수, 이름, 연락처, 참석 인원<br><b>이용 목적</b> 총회 참석 인원 파악 및 장소 대관 · 총회 안내 연락<br><b>보관 기간</b> 총회가 끝날 때까지 (끝나면 지체 없이 파기)<br>동의하지 않으실 수 있으나, 이 경우 온라인 신청이 되지 않습니다.</div>'+
+  '<label class="tog"><input type="checkbox" id="pv"> 개인정보 수집 · 이용에 동의합니다</label>'+
+  '<div class="err" id="er"></div><button class="btn" id="go">참석 신청하기</button>'+
+  '<p class="muted" style="margin:10px 0 0;text-align:center">신청 내용을 바꾸려면 다시 신청해 주세요. 같은 호수는 마지막 신청이 반영됩니다.</p></div>'+foot()+'</div>');
+  function fillHo(){var x=$('#ho');if(!RV.dong){x.innerHTML='<option value="">동을 먼저 고르세요</option>';x.disabled=true;return}
+    x.disabled=false;x.innerHTML='<option value="">호수 선택</option>'+hos(RV.dong).map(function(n){return'<option'+(String(n)===String(RV.ho)?' selected':'')+'>'+n+'</option>'}).join('')}
+  Array.prototype.forEach.call(document.querySelectorAll('.dongs button'),function(b){b.onclick=function(){RV.dong=b.getAttribute('data-d');RV.ho='';Array.prototype.forEach.call(document.querySelectorAll('.dongs button'),function(x){x.classList.toggle('on',x===b)});fillHo()}});
+  fillHo();
+  fetch(C.worker+'/rsvp-stats',{cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(j&&j.ok)$('#rvCnt').innerHTML='<div class="cnt"><b>'+j.n+'</b><span class="muted">세대 · '+j.people+'명 신청</span></div>'}).catch(function(){});
+  $('#go').onclick=function(){
+    var b=this,er=$('#er'),ho=$('#ho').value,nm=$('#nm').value.trim(),ph=fmtPhone($('#ph').value),cn=+$('#cn').value;
+    if(!RV.dong||!ho||!unitOk(RV.dong,ho))return er.textContent='동과 호수를 골라 주세요';
+    if(nm.length<2)return er.textContent='이름을 적어 주세요';
+    if(!ph)return er.textContent='연락처를 확인해 주세요 (예: 01012345678)';
+    if(!$('#su').checked)return er.textContent='꼭 참석하실 수 있는 경우에만 신청해 주세요';
+    if(!$('#pv').checked)return er.textContent='개인정보 수집 · 이용에 동의해 주셔야 신청할 수 있습니다';
+    RV.ho=ho;RV.name=nm;RV.phone=ph;RV.count=cn;b.disabled=true;b.textContent='신청 중…';er.textContent='';
+    post('/rsvp',{dong:RV.dong,ho:ho,name:nm,phone:ph,count:cn,sure:true,privacy:true}).then(function(j){
+      if(!j.ok){b.disabled=false;b.textContent='참석 신청하기';er.textContent=j._s===404?'신청 접수 준비 중입니다. 잠시 후 다시 시도해 주세요':j.message;return}
+      h(head()+'<div class="wrap"><div class="card done"><div class="ic">✓</div><h2>참석 신청되었습니다</h2><p class="muted">'+esc(RV.dong+'동 '+ho+'호 · '+nm+' · '+cn+'명')+'<br>접수번호 '+esc(j.no)+'</p>'+
+        '<p class="muted">총회 일시 · 장소가 확정되면 카페와 연락처로 안내드립니다.</p><button class="btn ghost" id="again">다른 세대 신청 · 내용 바꾸기</button><a class="btn ghost" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페</a></div>'+foot()+'</div>');
+      $('#again').onclick=rvForm;
+    });
+  };
+}
+/* 관리자 — 신청 현황 */
+var RA={pin:'',list:[],sum:null,f:{dong:'',q:'',voids:false}};
+function rvLogin(msg){
+  h(head()+'<div class="wrap" style="max-width:420px"><div class="card"><h2>관리자 로그인</h2><p class="muted" style="margin:0">명칭 변경 동의서와 같은 관리자 코드입니다.</p>'+
+  '<input class="t" id="pin" type="password" inputmode="numeric" autocomplete="off" style="margin-top:12px"><div class="err" id="er">'+esc(msg||'')+'</div><button class="btn" id="go">들어가기</button></div>'+foot()+'</div>');
+  var go=function(){var b=$('#go');b.disabled=true;RA.pin=$('#pin').value.trim();rvLoad().then(function(j){if(!j.ok){RA.pin='';b.disabled=false;$('#er').textContent=j.message}})};
+  $('#go').onclick=go;$('#pin').onkeydown=function(e){if(e.key==='Enter')go()};
+}
+function rvLoad(){return post('/admin',{pin:RA.pin,op:'rsvp_list'}).then(function(j){if(j.ok){RA.list=j.list;RA.sum=j.sum;rvMark();rvDash()}return j})}
+function rvMark(){var last={};RA.list.forEach(function(r){r.dup=false;if(!r.void)last[r.dong+'-'+r.ho]=r});RA.list.forEach(function(r){if(!r.void&&last[r.dong+'-'+r.ho]!==r)r.dup=true})}
+function rvRows(){var f=RA.f,q=f.q.trim();return RA.list.filter(function(r){if(!f.voids&&r.void)return false;if(f.dong&&r.dong!==f.dong)return false;
+  if(q){var s=r.dong+'-'+r.ho+' '+r.dong+'동 '+r.ho+'호 '+r.name+' '+r.phone;if(s.indexOf(q)<0)return false}return true}).sort(function(a,b){return b.no-a.no})}
+function rvDash(){
+  var s=RA.sum,dongs=Object.keys(L),f=RA.f;
+  h(head()+'<div class="wrap">'+
+  '<div class="kpis" style="margin-top:14px"><div class="kpi"><small>신청 세대</small><b>'+s.n+'</b></div><div class="kpi"><small>참석 예정 인원</small><b style="color:var(--navy)">'+s.people+'명</b></div>'+
+  '<div class="kpi"><small>세대당 평균</small><b>'+(s.n?(s.people/s.n).toFixed(1):'0')+'명</b></div><div class="kpi"><small>총 세대</small><b>'+C.total+'</b></div></div>'+
+  '<div class="card"><h2>동별 신청</h2><div class="scroll" style="max-height:none"><table class="l"><tr><th>동</th><th>세대</th><th>신청 세대</th><th>참석 인원</th></tr>'+
+  dongs.map(function(d){var b=s.byDong[d]||{n:0,p:0};return'<tr><td>'+d+'동</td><td>'+hos(d).length+'</td><td>'+b.n+'</td><td>'+b.p+'명</td></tr>'}).join('')+'</table></div></div>'+
+  '<div class="card"><h2>신청 목록</h2><div class="flt">'+
+  '<select id="fd"><option value="">전체 동</option>'+dongs.map(function(d){return'<option'+(f.dong===d?' selected':'')+' value="'+d+'">'+d+'동</option>'}).join('')+'</select>'+
+  '<input id="fq" placeholder="이름 · 호수 · 연락처" value="'+esc(f.q)+'"><label class="muted"><input type="checkbox" id="fv"'+(f.voids?' checked':'')+'> 무효 포함</label>'+
+  '<span style="flex:1"></span><button class="btn ghost sm" id="rf">새로고침</button><button class="btn sm" id="csv">엑셀(CSV)</button></div><div id="tb"></div></div>'+foot()+'</div>');
+  $('#fd').onchange=function(){f.dong=this.value;rvTable()};$('#fq').oninput=function(){f.q=this.value;rvTable()};$('#fv').onchange=function(){f.voids=this.checked;rvTable()};
+  $('#rf').onclick=function(){this.disabled=true;rvLoad()};$('#csv').onclick=rvCsv;
+  rvTable();
+}
+function rvTable(){
+  var r=rvRows();
+  $('#tb').innerHTML='<p class="muted" style="margin:8px 0 0">'+r.length+'건</p><div class="scroll"><table class="l"><tr><th>접수</th><th>동호수</th><th>이름</th><th>연락처</th><th>인원</th><th>신청일시</th><th>상태</th><th></th></tr>'+
+  r.map(function(x){return'<tr class="'+(x.void?'v':x.dup?'dup':'')+'"><td>'+x.no+'</td><td>'+esc(x.dong+'동 '+x.ho+'호')+'</td><td>'+esc(x.name)+'</td><td>'+esc(x.phone)+'</td><td>'+esc(x.count)+'명</td><td>'+esc(x.at)+'</td><td>'+
+    (x.void?'<span class="tag g">무효</span>':x.dup?'<span class="tag g">이전 신청</span>':'<span class="tag a">유효</span>')+'</td><td>'+
+    (x.void?'<button class="btn ghost sm" data-r="'+x.no+'">되살리기</button>':'<button class="btn ghost sm" data-x="'+x.no+'">무효</button>')+'</td></tr>'}).join('')+'</table></div>';
+  Array.prototype.forEach.call(document.querySelectorAll('[data-x]'),function(b){b.onclick=function(){rvVoid(+b.getAttribute('data-x'),'void')}});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-r]'),function(b){b.onclick=function(){rvVoid(+b.getAttribute('data-r'),'restore')}});
+}
+function rvVoid(n,op){
+  var r=RA.list.filter(function(x){return x.no===n})[0];if(!r)return;
+  var memo=prompt((op==='void'?'무효 처리':'되살리기')+' — '+r.dong+'동 '+r.ho+'호 '+r.name+'\n사유를 적어 주세요 (기록에 남습니다)','');if(memo===null)return;
+  post('/admin',{pin:RA.pin,op:op,no:n,memo:memo}).then(function(j){if(!j.ok)return alert(j.message);rvLoad()});
+}
+function rvCsv(){
+  var r=rvRows().slice().sort(function(a,c){return a.dong-c.dong||a.ho-c.ho||a.no-c.no});
+  var q=function(v){v=String(v==null?'':v);if(/^[=+\-@]/.test(v))v="'"+v;return'"'+v.replace(/"/g,'""')+'"'};
+  var lines=[['접수번호','동','호','이름','연락처','참석 인원','신청일시','상태'].map(q).join(',')].concat(r.map(function(x){return[x.no,x.dong,x.ho,x.name,x.phone,x.count,x.at,x.void?'무효':x.dup?'이전 신청':'유효'].map(q).join(',')}));
+  var blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='총회참석신청_'+C.short+'_'+today()+'.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
+}
+if(C.page==='rsvp'){if(C.mode==='admin')rvLogin();else rvForm()}
+else if(C.mode==='admin')login();else intro();
+splash();
+})();
+</script>
+</body>
+</html>

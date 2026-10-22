@@ -1,7 +1,7 @@
 /* 입주예정자협의회 플랫폼 — 서비스 워커
    화면을 기기에 담아두어, 신호가 약한 곳에서도 즉시 열리게 합니다. */
-var CACHE = 'jl-goyang-atera-adm-202610201439';
-var SHELL = ['./', './index.html', './icon-192.png', './icon-512.png', './fonts/Pretendard-Regular.subset.woff2', './manifest.json'];
+var CACHE = 'jl-goyang-atera-adm-202610221059';
+var SHELL = ['./', './index.html', './icon-192.png', './icon-512.png', './rsvp.html', './fonts/Pretendard-Regular.subset.woff2', './manifest.json'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(
