@@ -611,7 +611,9 @@ function rvMine(){
   $('#go').onclick=function(){var b=this,er=$('#er'),ho=$('#ho').value,ph=fmtPhone($('#ph').value);
     if(!MY.dong||!ho)return er.textContent='동과 호수를 골라 주세요';if(!ph)return er.textContent='연락처를 확인해 주세요';
     MY.ho=ho;MY.phone=ph;b.disabled=true;b.textContent='확인 중…';
-    post('/rsvp-find',{dong:MY.dong,ho:ho,phone:ph}).then(function(j){b.disabled=false;b.textContent='확인';if(!j.ok){er.textContent=j._s===404&&!/신청 내역/.test(j.message||'')?'확인 기능 준비 중입니다. 잠시 후 다시 시도해 주세요':j.message;return}rvMineEdit(j.rec)})};
+    /* 막 신청한 직후엔 서버 목록 반영이 몇 초 늦을 수 있어 한 번 더 확인 */
+    var find=function(){return post('/rsvp-find',{dong:MY.dong,ho:ho,phone:ph})};
+    find().then(function(j){return j.ok||j._s!==404||!/신청 내역/.test(j.message||'')?j:new Promise(function(r){setTimeout(r,3500)}).then(find)}).then(function(j){b.disabled=false;b.textContent='확인';if(!j.ok){er.textContent=j._s===404&&!/신청 내역/.test(j.message||'')?'확인 기능 준비 중입니다. 잠시 후 다시 시도해 주세요':j.message;return}rvMineEdit(j.rec)})};
 }
 function rvMineEdit(r){
   h(head()+'<div class="wrap"><div class="card"><h2>내 신청</h2><table class="rv-t"><tr><th>동호수</th><td>'+esc(r.dong+'동 '+r.ho+'호')+'</td></tr><tr><th>이름</th><td>'+esc(r.name)+'</td></tr>'+
