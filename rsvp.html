@@ -113,9 +113,10 @@ table.l tr.dup td{color:#8A93A5}
 .modal .mh{display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:10px 12px;background:#fff}
 .modal .mb{flex:1;overflow:auto;padding:12px}
 @media (max-width:640px){.kpis{grid-template-columns:repeat(2,1fr)}}
-.rv-t{width:100%;border-collapse:collapse;font-size:15px}.rv-t th{width:74px;text-align:left;vertical-align:top;padding:8px 8px 8px 0;color:var(--ink2);font-weight:600;white-space:nowrap}.rv-t td{padding:8px 0;border-bottom:1px solid var(--line)}.rv-t tr:last-child td{border-bottom:0}
+.rv-t{width:100%;border-collapse:collapse;font-size:15px}.rv-t th{width:82px;text-align:left;vertical-align:top;padding:8px 8px 8px 0;color:var(--ink2);font-weight:600;white-space:nowrap}.rv-t td{padding:8px 0;border-bottom:1px solid var(--line)}.rv-t tr:last-child td{border-bottom:0}
 .rv-ul{margin:0;padding-left:18px;line-height:1.7}
-.rsvp-cta{border:1.5px solid var(--navy)}.rsvp-cta .btn{margin-top:12px}
+.nm{width:100%;border-collapse:collapse;table-layout:fixed;font-size:15px;margin-top:4px}.nm th,.nm td{border:1px solid #C9D1DE;padding:9px 6px;text-align:center;word-break:keep-all}.nm th{background:var(--navy);color:#fff;font-weight:700}.nm td.k{background:#F2F5FA;color:var(--ink2);font-weight:600}.nm td.o{color:var(--ink2)}.nm td.n{color:var(--navy);font-weight:800;background:#FFF8E6}
+.nmbox{border:1.5px solid var(--navy);border-radius:12px;padding:12px;margin-top:10px;background:#fff}.nmbox h3{margin:0 0 6px;font-size:15px}
 /* ── 인트로 (법무법인 제이엘 플랫폼 공통) ── */
 :root{--ease:cubic-bezier(.22,1,.36,1)}
 .intro{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#070b14;color:#fff;overflow:hidden}
@@ -214,7 +215,7 @@ body.has-inapp .wrap{padding-bottom:90px}
 <div class="inapp-bar" id="inAppBar" hidden><span id="inAppTx">앱 안에서는 앱 설치가 안 됩니다</span><button type="button" onclick="Install.out()">인터넷으로 열기</button><button type="button" class="x" onclick="document.getElementById('inAppBar').hidden=true;document.body.classList.remove('has-inapp')" aria-label="닫기">✕</button></div>
 <div class="install" id="installBar" hidden><img class="ins-ic" src="icon-192.png" alt=""><div class="ins-tx"><b id="insTitle">홈 화면에 추가하기</b><span id="insDesc">한 번 추가하면 앱처럼 바로 열립니다. 설치 용량은 1MB도 되지 않습니다.</span></div><div class="ins-btns"><button class="btn sm" id="insGo" onclick="Install.go()">추가</button><button class="ins-x" onclick="Install.later()" aria-label="닫기">✕</button></div></div>
 <div id="prt"></div>
-<script>window.CFG={"apt":"고양 장항 아테라","short":"고양장항아테라","org":"고양 장항 아테라 입주예정자협의회","newName":"","total":760,"layout":{"301":[[1,3,28],[2,3,28],[3,3,21],[4,3,21],[5,1,21]],"302":[[1,1,29],[2,3,29],[3,1,29]],"303":[[1,1,27],[2,1,27],[3,1,27],[4,3,27],[5,1,27]],"304":[[1,1,24],[2,3,24],[3,1,24],[4,3,24],[5,1,18]],"305":[[1,3,18],[2,3,18],[3,3,18],[4,3,18]],"306":[[1,1,25],[2,1,27],[3,3,27]],"307":[[1,1,26],[2,3,29],[3,3,29]],"308":[[1,3,24],[2,3,24],[3,1,20],[4,3,20],[5,3,20]]},"cafe":"https://cafe.naver.com/jahangartera","worker":"https://jl-atera.treparkjl.workers.dev","residentUrl":"https://kingjin77-rgb.github.io/goyang-atera/","mode":"admin","page":"rsvp"};</script>
+<script>window.CFG={"apt":"고양 장항 아테라","short":"고양장항아테라","org":"고양 장항 아테라 입주예정자협의회","newName":"장항 한강 아테라","total":760,"layout":{"301":[[1,3,28],[2,3,28],[3,3,21],[4,3,21],[5,1,21]],"302":[[1,1,29],[2,3,29],[3,1,29]],"303":[[1,1,27],[2,1,27],[3,1,27],[4,3,27],[5,1,27]],"304":[[1,1,24],[2,3,24],[3,1,24],[4,3,24],[5,1,18]],"305":[[1,3,18],[2,3,18],[3,3,18],[4,3,18]],"306":[[1,1,25],[2,1,27],[3,3,27]],"307":[[1,1,26],[2,3,29],[3,3,29]],"308":[[1,3,24],[2,3,24],[3,1,20],[4,3,20],[5,3,20]]},"cafe":"https://cafe.naver.com/jahangartera","worker":"https://jl-atera.treparkjl.workers.dev","residentUrl":"https://kingjin77-rgb.github.io/goyang-atera/","mode":"admin","page":"rsvp"};</script>
 <script>
 (function(){
 'use strict';
@@ -299,14 +300,15 @@ function foot(){return '<div class="foot">'+esc(C.org)+' · 운영지원 법무�
 /* ═════════ 입주민 화면 ═════════ */
 var V={};
 function steps(n){var s='';for(var i=1;i<=4;i++)s+='<i'+(i<=n?' class="on"':'')+'></i>';return'<div class="steps">'+s+'</div>'}
+function nameTbl(){return '<table class="nm"><tr><th style="width:22%">구분</th><th>변경 전</th><th>변경 후</th></tr><tr><td class="k">명칭</td><td class="o">'+esc(C.apt)+'</td><td class="n">'+esc(C.newName)+'</td></tr></table>'}
 function intro(){
   h(head()+'<div class="wrap">'+
+  '<div class="card"><h2>아파트 명칭 변경 (전 → 후)</h2>'+nameTbl()+'<p class="muted" style="margin:10px 0 0">동의서를 작성하기 전에 변경 전 · 후 명칭을 꼭 확인해 주세요.</p></div>'+
   '<div class="card"><h2>동의서 내용</h2><div class="stmt">'+esc(C.apt)+' 아파트 입주예정자협의회에서는 우리 아파트의 가치를 상승시키는 일환으로 아파트 명칭 변경을 추진하고자 하며, 상기 수분양자는 서면동의 하여 명칭 변경과 관련 입주예정자협의회에 모든 권한을 위임합니다.</div>'+
-  '<p class="muted" style="margin:10px 0 0">변경 후 명칭은 정해지는 대로 카페에 안내됩니다. 공동명의인 경우 두 분 모두 서명해 주세요.</p>'+
+  '<p class="muted" style="margin:10px 0 0">공동명의인 경우 두 분 모두 서명해 주세요.</p>'+
   '<div id="cnt"></div>'+
   '<button class="btn" id="go">동의서 작성하기</button>'+
   '<a class="btn ghost" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페 바로가기</a></div>'+
-  '<div class="card rsvp-cta"><h2>📣 입주예정자협의회 총회 참석 신청</h2><p class="muted" style="margin:0">2월 중 토요일 (예정) · 참석 인원에 따라 장소를 대관합니다.</p><a class="btn" href="rsvp.html" target="_blank" rel="noopener">총회 참석 신청하기 (새 창)</a></div>'+
   '<div class="card"><h2>명칭 변경은 이렇게 진행됩니다</h2><ol class="flow">'+
   [['동의서 제출','입주예정자가 온라인 또는 서면으로 동의 여부를 제출합니다',1],
    ['동의 현황 집계','협의회가 세대별 제출 현황을 확인하고 정리합니다',0],
@@ -359,6 +361,7 @@ function form1(){
 function form2(){
   h(head()+'<div class="wrap">'+steps(2)+
   '<div class="card"><h2>2. 동의 여부</h2><p class="muted" style="margin:0">'+esc(V.dong+'동 '+V.ho+'호 · '+V.name)+(V.joint?' · 공동명의 '+esc(V.joint.name):'')+'</p>'+
+  '<div class="nmbox"><h3>다시 한번 확인해 주세요</h3>'+nameTbl()+'<p class="muted" style="margin:8px 0 0">위와 같이 아파트 명칭을 변경하는 데 동의하시는지 골라 주세요.</p></div>'+
   '<div class="choice"><button type="button" data-a="1"'+(V.agree===true?' class="on"':'')+'><span class="bx"></span>명칭 변경에 동의합니다.</button>'+
   '<button type="button" data-a="0"'+(V.agree===false?' class="on"':'')+'><span class="bx"></span>명칭 변경에 동의하지 않습니다.</button></div>'+
   '<h3>개인정보 수집 · 이용 동의 (필수)</h3><div class="pv"><b>수집 항목</b> 계약자 · 공동명의자 이름, 생년월일, 연락처, 동호수, 서명<br><b>이용 목적</b> 아파트 명칭 변경 동의 여부 확인 및 동의서 제출<br><b>보관 기간</b> 명칭 변경 절차가 끝날 때까지 (끝나면 지체 없이 파기)<br>동의하지 않으실 수 있으나, 이 경우 온라인 제출이 되지 않습니다.</div>'+
@@ -548,12 +551,14 @@ window.JLDeed=deed;   /* 점검용 — 동의서 1장 그리기 */
 Install.init();
 /* ═════════ 총회 참석 신청 (별도 링크 rsvp.html) ═════════ */
 var RV={};
-function rvInfo(){return '<div class="card"><h2>총회 안내</h2><table class="rv-t">'+
-  '<tr><th>일시</th><td>2월 중 토요일 <span class="muted">(예정 · 확정되면 카페 공지)</span></td></tr>'+
-  '<tr><th>내용</th><td><ul class="rv-ul"><li>박람회 안내</li><li>법무법인 제이엘 — 대출 관련 안내</li><li>입주예정자협의회 — 활동 성과 발표</li></ul></td></tr>'+
-  '<tr><th>장소</th><td>참석 인원에 따라 대관 예정</td></tr>'+
-  '<tr><th>신청 기간</th><td>2026년 11월 첫째 주 <span class="muted">(예정)</span></td></tr></table>'+
-  '<div class="stmt" style="margin-top:12px">참석 인원에 맞춰 장소를 대관하려고 합니다. <b>꼭 참석하실 수 있는 분만</b> 신청 부탁드립니다.</div><div id="rvCnt"></div></div>'}
+function rvInfo(){return '<div class="card"><h2>총회 안내</h2>'+
+  '<div class="stmt">본 신청은 <b>사전접수</b>로, 현장에서 사전 접수한 세대 확인 후 입장이 가능합니다. 또한 조사된 인원에 맞춰 장소를 대관하고자 합니다.<br>총회에는 많은 비용이 소요되니 <b>꼭 참석하실 수 있는 세대만</b> 신청해 주셔야 하며, 입주 관련 중요한 사안에 대한 설명회가 진행되오니 각 세대별 꼭 참석해 주시기 바랍니다.</div>'+
+  '<h3 style="margin:14px 0 4px">총회 가이드</h3><table class="rv-t">'+
+  '<tr><th>일시</th><td>2027년 2월 13일 또는 20일 (토)<br>오후 1시부터 약 3시간</td></tr>'+
+  '<tr><th>장소</th><td>일산 또는 일산 근접 지역<br><span class="muted">(추후 세부 공지 예정)</span></td></tr>'+
+  '<tr><th>참석 제한</th><td>세대별 <b>성인 2명</b>까지</td></tr>'+
+  '<tr><th>총회 안건</th><td><ul class="rv-ul"><li>입예협 활동 보고 및 계획</li><li>사전점검 및 입주 본박람회 안내</li><li>인테리어 가이드</li><li>대출 및 소유권이전등기 안내 및 지원</li></ul></td></tr></table>'+
+  '<div id="rvCnt"></div></div>'}
 function rvForm(){
   var dongs=Object.keys(L);
   h(head()+'<div class="wrap">'+rvInfo()+
@@ -562,7 +567,8 @@ function rvForm(){
   '<label class="f">호수</label><select class="t" id="ho"></select>'+
   '<label class="f">이름</label><input class="t" id="nm" autocomplete="name" maxlength="20" value="'+esc(RV.name)+'">'+
   '<div class="row2"><div><label class="f">연락처</label><input class="t" id="ph" inputmode="tel" placeholder="01012345678" maxlength="13" value="'+esc(digits(RV.phone))+'"></div>'+
-  '<div><label class="f">참석 인원</label><select class="t" id="cn">'+[1,2,3,4,5].map(function(n){return'<option value="'+n+'"'+(+RV.count===n?' selected':'')+'>'+n+'명</option>'}).join('')+'</select></div></div>'+
+  '<div><label class="f">참석 인원</label><select class="t" id="cn">'+[1,2].map(function(n){return'<option value="'+n+'"'+(+RV.count===n?' selected':'')+'>'+n+'명</option>'}).join('')+'</select></div></div>'+
+  '<p class="muted" style="margin:6px 0 0">참석 인원은 세대별 성인 최대 2명입니다.</p>'+
   '<label class="tog"><input type="checkbox" id="su"> 꼭 참석할 수 있습니다</label>'+
   '<div class="pv"><b>수집 항목</b> 동호수, 이름, 연락처, 참석 인원<br><b>이용 목적</b> 총회 참석 인원 파악 및 장소 대관 · 총회 안내 연락<br><b>보관 기간</b> 총회가 끝날 때까지 (끝나면 지체 없이 파기)<br>동의하지 않으실 수 있으나, 이 경우 온라인 신청이 되지 않습니다.</div>'+
   '<label class="tog"><input type="checkbox" id="pv"> 개인정보 수집 · 이용에 동의합니다</label>'+
@@ -618,7 +624,7 @@ function rvMine(){
 function rvMineEdit(r){
   h(head()+'<div class="wrap"><div class="card"><h2>내 신청</h2><table class="rv-t"><tr><th>동호수</th><td>'+esc(r.dong+'동 '+r.ho+'호')+'</td></tr><tr><th>이름</th><td>'+esc(r.name)+'</td></tr>'+
   '<tr><th>참석 인원</th><td><b>'+esc(r.count)+'명</b></td></tr><tr><th>신청 일시</th><td>'+esc(r.at)+'</td></tr></table>'+
-  '<h3>참석 인원 변경</h3><div class="row2"><select class="t" id="cn">'+[1,2,3,4,5].map(function(n){return'<option value="'+n+'"'+(+r.count===n?' selected':'')+'>'+n+'명</option>'}).join('')+'</select><button class="btn" id="chg" style="margin-top:6px">인원 변경</button></div>'+
+  '<h3>참석 인원 변경</h3><div class="row2"><select class="t" id="cn">'+[1,2].map(function(n){return'<option value="'+n+'"'+(+r.count===n?' selected':'')+'>'+n+'명</option>'}).join('')+'</select><button class="btn" id="chg" style="margin-top:6px">인원 변경</button></div>'+
   '<h3>신청 취소</h3><p class="muted" style="margin:0">참석이 어려워지셨다면 취소해 주세요. 대관 인원에서 빠집니다.</p><button class="btn ghost" id="cx" style="color:var(--no);border-color:var(--no)">신청 취소</button>'+
   '<div class="err" id="er"></div><button class="btn ghost" id="bk">신청 화면으로</button></div>'+foot()+'</div>');
   $('#bk').onclick=function(){rvForm()};
