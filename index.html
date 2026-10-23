@@ -35,6 +35,19 @@ button,input,select{font:inherit;color:inherit}
 .top .org{font-size:13px;opacity:.75;letter-spacing:.02em}
 .top h1{margin:4px 0 0;font-size:23px;line-height:1.3;font-weight:700}
 .top .sub{margin-top:6px;font-size:14px;opacity:.85}
+/* 총회참석 사전신청 제목 — 글자 순서대로 올라오고, 밑줄이 그어지고, 글자마다 빛이 물결처럼 지나감 */
+.top h1.hero{position:relative;margin:8px 0 2px;font-size:36px;line-height:1.2;letter-spacing:-.01em;padding:2px 0 10px}
+.hero .c{display:inline-block;opacity:0;transform:translateY(.7em);animation:heroUp .7s cubic-bezier(.22,1,.36,1) forwards,heroGlow 4.5s ease-in-out infinite}
+.hero .sp{display:inline-block;width:.28em}
+.hero .hl{position:relative;display:inline-block;color:#A9CCE8}
+.hero .hl::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:5px;border-radius:9px;background:linear-gradient(90deg,#A9CCE8,#E9C88E);transform:scaleX(0);transform-origin:left;animation:heroLine .8s cubic-bezier(.22,1,.36,1) 1.05s forwards}
+@keyframes heroUp{to{opacity:1;transform:none}}
+@keyframes heroLine{to{transform:scaleX(1)}}
+@keyframes heroGlow{0%,14%,100%{text-shadow:none}6%{text-shadow:0 0 12px rgba(255,255,255,.95),0 0 26px rgba(169,204,232,.8)}}
+.btn.go-pulse{animation:goPulse 2.4s ease-in-out 2s infinite}
+@keyframes goPulse{0%,100%{box-shadow:0 0 0 0 rgba(22,38,79,.45)}50%{box-shadow:0 0 0 9px rgba(22,38,79,0)}}
+@media (max-width:360px){.top h1.hero{font-size:31px}}
+@media (prefers-reduced-motion:reduce){.hero .c{animation:none;opacity:1;transform:none}.hero .hl::after{animation:none;transform:none}.btn.go-pulse{animation:none}}
 .bar{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 .chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:6px 12px;font-size:13px;text-decoration:none}
 .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:14px}
@@ -292,7 +305,9 @@ function Pad(box){
     o.getContext('2d').drawImage(cv,x0,y0,cw,ch,0,0,o.width,o.height);return o.toDataURL('image/png')}};
 }
 function padHtml(id,label){return '<label class="f">'+label+'</label><div class="pad" id="'+id+'"><canvas></canvas><div class="ph">여기에 손가락으로 서명해 주세요</div><button type="button" class="btn ghost sm clr">다시 쓰기</button></div>'}
-function head(){var rs=C.page==='rsvp';return '<div class="top"><div class="wrap"><div class="org">'+esc(C.org)+'</div><h1>'+(rs?(C.mode==='admin'?'총회참석 사전신청 · 관리자':'입주예정자협의회 총회참석 사전신청'):(C.mode==='admin'?'명칭 변경 동의서 · 관리자':'아파트 명칭 변경 동의서'))+'</h1>'+
+function hero(){var k=0;function cs(t){return t.split('').map(function(ch){return'<span class="c" style="animation-delay:'+(0.15+0.07*k).toFixed(2)+'s,'+(1.9+0.09*k++).toFixed(2)+'s">'+ch+'</span>'}).join('')}
+  return '<h1 class="hero" aria-label="총회참석 사전신청">'+cs('총회참석')+'<span class="sp"></span><span class="hl">'+cs('사전신청')+'</span></h1>'}
+function head(){var rs=C.page==='rsvp';return '<div class="top"><div class="wrap"><div class="org">'+esc(C.org)+'</div>'+(rs&&C.mode!=='admin'?hero():'<h1>'+(rs?'총회참석 사전신청 · 관리자':(C.mode==='admin'?'명칭 변경 동의서 · 관리자':'아파트 명칭 변경 동의서'))+'</h1>')+
   (C.mode==='admin'?'':'<div class="sub">'+(rs?'꼭 참석하실 수 있는 세대만 신청해 주세요':'온라인으로 작성하고 서명하면 협의회에 바로 제출됩니다')+'</div>')+
   '<div class="bar"><button type="button" class="chip ins" onclick="Install.ask()"'+(Install.standalone()?' hidden':'')+'>📲 앱 설치</button><a class="chip" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페</a>'+(C.mode==='admin'?'<a class="chip" href="'+esc(C.residentUrl)+'" target="_blank" rel="noopener">입주민 화면</a>'+(rs?'':'<a class="chip" href="rsvp.html" target="_blank" rel="noopener">📣 총회참석 사전신청 현황</a>'):'')+'</div></div></div>'}
 function foot(){return '<div class="foot">'+esc(C.org)+' · 운영지원 법무법인 제이엘</div>'}
@@ -572,8 +587,8 @@ function rvForm(){
   '<label class="tog"><input type="checkbox" id="su"> 꼭 참석할 수 있습니다</label>'+
   '<div class="pv"><b>수집 항목</b> 동호수, 이름, 연락처, 참석 인원<br><b>이용 목적</b> 총회 참석 인원 파악 및 장소 대관 · 총회 안내 연락<br><b>보관 기간</b> 총회가 끝날 때까지 (끝나면 지체 없이 파기)<br>동의하지 않으실 수 있으나, 이 경우 온라인 신청이 되지 않습니다.</div>'+
   '<label class="tog"><input type="checkbox" id="pv"> 개인정보 수집 · 이용에 동의합니다</label>'+
-  '<div class="err" id="er"></div><button class="btn" id="go">사전신청하기</button></div>'+
-  '<div class="card"><h2>이미 신청하셨나요?</h2><p class="muted" style="margin:0">참석 인원을 바꾸거나 신청을 취소할 수 있습니다.</p><button class="btn ghost" id="mine">내 신청 확인 · 변경 · 취소</button></div>'+foot()+'</div>');
+  '<div class="err" id="er"></div><button class="btn go-pulse" id="go">총회참석 사전신청</button></div>'+
+  '<div class="card"><h2>이미 사전신청하셨나요?</h2><p class="muted" style="margin:0">인원 변경 · 사전신청 취소가 가능합니다.</p><button class="btn ghost" id="mine">내 사전신청 확인 · 변경 · 취소</button></div>'+foot()+'</div>');
   $('#mine').onclick=function(){rvMine()};
   function fillHo(){var x=$('#ho');if(!RV.dong){x.innerHTML='<option value="">동을 먼저 고르세요</option>';x.disabled=true;return}
     x.disabled=false;x.innerHTML='<option value="">호수 선택</option>'+hos(RV.dong).map(function(n){return'<option'+(String(n)===String(RV.ho)?' selected':'')+'>'+n+'</option>'}).join('')}
@@ -589,22 +604,22 @@ function rvForm(){
     if(!$('#pv').checked)return er.textContent='개인정보 수집 · 이용에 동의해 주셔야 신청할 수 있습니다';
     RV.ho=ho;RV.name=nm;RV.phone=ph;RV.count=cn;b.disabled=true;b.textContent='신청 중…';er.textContent='';
     post('/rsvp',{dong:RV.dong,ho:ho,name:nm,phone:ph,count:cn,sure:true,privacy:true}).then(function(j){
-      if(!j.ok){b.disabled=false;b.textContent='사전신청하기';er.textContent=j._s===404?'신청 접수 준비 중입니다. 잠시 후 다시 시도해 주세요':j.message;return}
+      if(!j.ok){b.disabled=false;b.textContent='총회참석 사전신청';er.textContent=j._s===404?'신청 접수 준비 중입니다. 잠시 후 다시 시도해 주세요':j.message;return}
       rvDone('사전신청되었습니다',RV.dong+'동 '+ho+'호 · '+nm+' · '+cn+'명',j.no);
     });
   };
 }
 function rvDone(title,line,no){
   h(head()+'<div class="wrap"><div class="card done"><div class="ic">✓</div><h2>'+esc(title)+'</h2><p class="muted">'+esc(line)+(no?'<br>접수번호 '+esc(no):'')+'</p>'+
-    '<p class="muted">총회 일시 · 장소가 확정되면 카페와 연락처로 안내드립니다.<br>인원 변경 · 취소는 「내 신청 확인」에서 할 수 있습니다.</p>'+
-    '<button class="btn ghost" id="mine">내 신청 확인 · 변경 · 취소</button><button class="btn ghost" id="again">다른 세대 신청하기</button><a class="btn ghost" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페</a></div>'+foot()+'</div>');
+    '<p class="muted">총회 일시 · 장소가 확정되면 카페와 연락처로 안내드립니다.<br>인원 변경 · 취소는 「내 사전신청 확인」에서 할 수 있습니다.</p>'+
+    '<button class="btn ghost" id="mine">내 사전신청 확인 · 변경 · 취소</button><button class="btn ghost" id="again">다른 세대 사전신청</button><a class="btn ghost" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페</a></div>'+foot()+'</div>');
   $('#again').onclick=function(){RV={};rvForm()};$('#mine').onclick=function(){rvMine()};
 }
 /* 본인 신청 확인 · 변경 · 취소 — 동 · 호수 + 신청 때 쓴 연락처 */
 var MY={};
 function rvMine(){
   var dongs=Object.keys(L);
-  h(head()+'<div class="wrap"><div class="card"><h2>내 신청 확인 · 변경 · 취소</h2><p class="muted" style="margin:0">신청할 때 적은 <b>동 · 호수와 연락처</b>로 확인합니다.</p>'+
+  h(head()+'<div class="wrap"><div class="card"><h2>내 사전신청 확인 · 변경 · 취소</h2><p class="muted" style="margin:0">신청할 때 적은 <b>동 · 호수와 연락처</b>로 확인합니다.</p>'+
   '<label class="f">동</label><div class="dongs">'+dongs.map(function(d){return'<button type="button" data-d="'+d+'"'+(MY.dong===d?' class="on"':'')+'>'+d+'동</button>'}).join('')+'</div>'+
   '<label class="f">호수</label><select class="t" id="ho"></select>'+
   '<label class="f">신청 때 적은 연락처</label><input class="t" id="ph" inputmode="tel" placeholder="01012345678" maxlength="13" value="'+esc(digits(MY.phone))+'">'+
@@ -622,17 +637,17 @@ function rvMine(){
     find().then(function(j){return j.ok||j._s!==404||!/신청 내역/.test(j.message||'')?j:new Promise(function(r){setTimeout(r,3500)}).then(find)}).then(function(j){b.disabled=false;b.textContent='확인';if(!j.ok){er.textContent=j._s===404&&!/신청 내역/.test(j.message||'')?'확인 기능 준비 중입니다. 잠시 후 다시 시도해 주세요':j.message;return}rvMineEdit(j.rec)})};
 }
 function rvMineEdit(r){
-  h(head()+'<div class="wrap"><div class="card"><h2>내 신청</h2><table class="rv-t"><tr><th>동호수</th><td>'+esc(r.dong+'동 '+r.ho+'호')+'</td></tr><tr><th>이름</th><td>'+esc(r.name)+'</td></tr>'+
+  h(head()+'<div class="wrap"><div class="card"><h2>내 사전신청</h2><table class="rv-t"><tr><th>동호수</th><td>'+esc(r.dong+'동 '+r.ho+'호')+'</td></tr><tr><th>이름</th><td>'+esc(r.name)+'</td></tr>'+
   '<tr><th>참석 인원</th><td><b>'+esc(r.count)+'명</b></td></tr><tr><th>신청 일시</th><td>'+esc(r.at)+'</td></tr></table>'+
   '<h3>참석 인원 변경</h3><div class="row2"><select class="t" id="cn">'+[1,2].map(function(n){return'<option value="'+n+'"'+(+r.count===n?' selected':'')+'>'+n+'명</option>'}).join('')+'</select><button class="btn" id="chg" style="margin-top:6px">인원 변경</button></div>'+
-  '<h3>신청 취소</h3><p class="muted" style="margin:0">참석이 어려워지셨다면 취소해 주세요. 대관 인원에서 빠집니다.</p><button class="btn ghost" id="cx" style="color:var(--no);border-color:var(--no)">신청 취소</button>'+
+  '<h3>사전신청 취소</h3><p class="muted" style="margin:0">참석이 어려워지셨다면 취소해 주세요. 대관 인원에서 빠집니다.</p><button class="btn ghost" id="cx" style="color:var(--no);border-color:var(--no)">사전신청 취소</button>'+
   '<div class="err" id="er"></div><button class="btn ghost" id="bk">신청 화면으로</button></div>'+foot()+'</div>');
   $('#bk').onclick=function(){rvForm()};
   $('#chg').onclick=function(){var b=this,cn=+$('#cn').value;if(cn===+r.count)return $('#er').textContent='지금과 같은 인원입니다';b.disabled=true;
     post('/rsvp-edit',{dong:r.dong,ho:r.ho,phone:MY.phone,count:cn}).then(function(j){b.disabled=false;if(!j.ok)return $('#er').textContent=j.message;rvDone('참석 인원이 변경되었습니다',r.dong+'동 '+r.ho+'호 · '+r.name+' · '+cn+'명',j.no)})};
   $('#cx').onclick=function(){if(!confirm(r.dong+'동 '+r.ho+'호 총회참석 사전신청을 취소할까요?'))return;var b=this;b.disabled=true;
     post('/rsvp-edit',{dong:r.dong,ho:r.ho,phone:MY.phone,cancel:true}).then(function(j){b.disabled=false;if(!j.ok)return $('#er').textContent=j.message;
-      h(head()+'<div class="wrap"><div class="card done"><div class="ic" style="background:#6A7385">✕</div><h2>신청이 취소되었습니다</h2><p class="muted">'+esc(r.dong+'동 '+r.ho+'호')+'</p><button class="btn ghost" id="again">다시 신청하기</button></div>'+foot()+'</div>');$('#again').onclick=function(){RV={};rvForm()}})};
+      h(head()+'<div class="wrap"><div class="card done"><div class="ic" style="background:#6A7385">✕</div><h2>신청이 취소되었습니다</h2><p class="muted">'+esc(r.dong+'동 '+r.ho+'호')+'</p><button class="btn ghost" id="again">다시 사전신청</button></div>'+foot()+'</div>');$('#again').onclick=function(){RV={};rvForm()}})};
 }
 /* 관리자 — 신청 현황 */
 var RA={pin:'',list:[],sum:null,f:{dong:'',q:'',voids:false}};
