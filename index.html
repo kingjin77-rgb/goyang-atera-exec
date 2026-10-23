@@ -292,9 +292,9 @@ function Pad(box){
     o.getContext('2d').drawImage(cv,x0,y0,cw,ch,0,0,o.width,o.height);return o.toDataURL('image/png')}};
 }
 function padHtml(id,label){return '<label class="f">'+label+'</label><div class="pad" id="'+id+'"><canvas></canvas><div class="ph">여기에 손가락으로 서명해 주세요</div><button type="button" class="btn ghost sm clr">다시 쓰기</button></div>'}
-function head(){var rs=C.page==='rsvp';return '<div class="top"><div class="wrap"><div class="org">'+esc(C.org)+'</div><h1>'+(rs?(C.mode==='admin'?'총회 참석 신청 · 관리자':'입주예정자협의회 총회 참석 신청'):(C.mode==='admin'?'명칭 변경 동의서 · 관리자':'아파트 명칭 변경 동의서'))+'</h1>'+
+function head(){var rs=C.page==='rsvp';return '<div class="top"><div class="wrap"><div class="org">'+esc(C.org)+'</div><h1>'+(rs?(C.mode==='admin'?'총회참석 사전신청 · 관리자':'입주예정자협의회 총회참석 사전신청'):(C.mode==='admin'?'명칭 변경 동의서 · 관리자':'아파트 명칭 변경 동의서'))+'</h1>'+
   (C.mode==='admin'?'':'<div class="sub">'+(rs?'꼭 참석하실 수 있는 세대만 신청해 주세요':'온라인으로 작성하고 서명하면 협의회에 바로 제출됩니다')+'</div>')+
-  '<div class="bar"><button type="button" class="chip ins" onclick="Install.ask()"'+(Install.standalone()?' hidden':'')+'>📲 앱 설치</button><a class="chip" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페</a>'+(C.mode==='admin'?'<a class="chip" href="'+esc(C.residentUrl)+'" target="_blank" rel="noopener">입주민 화면</a>'+(rs?'':'<a class="chip" href="rsvp.html" target="_blank" rel="noopener">📣 총회 신청 현황</a>'):'')+'</div></div></div>'}
+  '<div class="bar"><button type="button" class="chip ins" onclick="Install.ask()"'+(Install.standalone()?' hidden':'')+'>📲 앱 설치</button><a class="chip" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페</a>'+(C.mode==='admin'?'<a class="chip" href="'+esc(C.residentUrl)+'" target="_blank" rel="noopener">입주민 화면</a>'+(rs?'':'<a class="chip" href="rsvp.html" target="_blank" rel="noopener">📣 총회참석 사전신청 현황</a>'):'')+'</div></div></div>'}
 function foot(){return '<div class="foot">'+esc(C.org)+' · 운영지원 법무법인 제이엘</div>'}
 
 /* ═════════ 입주민 화면 ═════════ */
@@ -549,7 +549,7 @@ var Install={ev:null,
 window.Install=Install;
 window.JLDeed=deed;   /* 점검용 — 동의서 1장 그리기 */
 Install.init();
-/* ═════════ 총회 참석 신청 (별도 링크 rsvp.html) ═════════ */
+/* ═════════ 총회참석 사전신청 (별도 링크 rsvp.html) ═════════ */
 var RV={};
 function rvInfo(){return '<div class="card"><h2>총회 안내</h2>'+
   '<div class="stmt">본 신청은 <b>사전접수</b>로, 현장에서 사전 접수한 세대 확인 후 입장이 가능합니다. 또한 조사된 인원에 맞춰 장소를 대관하고자 합니다.<br>총회에는 많은 비용이 소요되니 <b>꼭 참석하실 수 있는 세대만</b> 신청해 주셔야 하며, 입주 관련 중요한 사안에 대한 설명회가 진행되오니 각 세대별 꼭 참석해 주시기 바랍니다.</div>'+
@@ -562,7 +562,7 @@ function rvInfo(){return '<div class="card"><h2>총회 안내</h2>'+
 function rvForm(){
   var dongs=Object.keys(L);
   h(head()+'<div class="wrap">'+rvInfo()+
-  '<div class="card"><h2>참석 신청</h2>'+
+  '<div class="card"><h2>사전신청</h2>'+
   '<label class="f">동</label><div class="dongs">'+dongs.map(function(d){return'<button type="button" data-d="'+d+'"'+(RV.dong===d?' class="on"':'')+'>'+d+'동</button>'}).join('')+'</div>'+
   '<label class="f">호수</label><select class="t" id="ho"></select>'+
   '<label class="f">이름</label><input class="t" id="nm" autocomplete="name" maxlength="20" value="'+esc(RV.name)+'">'+
@@ -572,7 +572,7 @@ function rvForm(){
   '<label class="tog"><input type="checkbox" id="su"> 꼭 참석할 수 있습니다</label>'+
   '<div class="pv"><b>수집 항목</b> 동호수, 이름, 연락처, 참석 인원<br><b>이용 목적</b> 총회 참석 인원 파악 및 장소 대관 · 총회 안내 연락<br><b>보관 기간</b> 총회가 끝날 때까지 (끝나면 지체 없이 파기)<br>동의하지 않으실 수 있으나, 이 경우 온라인 신청이 되지 않습니다.</div>'+
   '<label class="tog"><input type="checkbox" id="pv"> 개인정보 수집 · 이용에 동의합니다</label>'+
-  '<div class="err" id="er"></div><button class="btn" id="go">참석 신청하기</button></div>'+
+  '<div class="err" id="er"></div><button class="btn" id="go">사전신청하기</button></div>'+
   '<div class="card"><h2>이미 신청하셨나요?</h2><p class="muted" style="margin:0">참석 인원을 바꾸거나 신청을 취소할 수 있습니다.</p><button class="btn ghost" id="mine">내 신청 확인 · 변경 · 취소</button></div>'+foot()+'</div>');
   $('#mine').onclick=function(){rvMine()};
   function fillHo(){var x=$('#ho');if(!RV.dong){x.innerHTML='<option value="">동을 먼저 고르세요</option>';x.disabled=true;return}
@@ -589,8 +589,8 @@ function rvForm(){
     if(!$('#pv').checked)return er.textContent='개인정보 수집 · 이용에 동의해 주셔야 신청할 수 있습니다';
     RV.ho=ho;RV.name=nm;RV.phone=ph;RV.count=cn;b.disabled=true;b.textContent='신청 중…';er.textContent='';
     post('/rsvp',{dong:RV.dong,ho:ho,name:nm,phone:ph,count:cn,sure:true,privacy:true}).then(function(j){
-      if(!j.ok){b.disabled=false;b.textContent='참석 신청하기';er.textContent=j._s===404?'신청 접수 준비 중입니다. 잠시 후 다시 시도해 주세요':j.message;return}
-      rvDone('참석 신청되었습니다',RV.dong+'동 '+ho+'호 · '+nm+' · '+cn+'명',j.no);
+      if(!j.ok){b.disabled=false;b.textContent='사전신청하기';er.textContent=j._s===404?'신청 접수 준비 중입니다. 잠시 후 다시 시도해 주세요':j.message;return}
+      rvDone('사전신청되었습니다',RV.dong+'동 '+ho+'호 · '+nm+' · '+cn+'명',j.no);
     });
   };
 }
@@ -630,7 +630,7 @@ function rvMineEdit(r){
   $('#bk').onclick=function(){rvForm()};
   $('#chg').onclick=function(){var b=this,cn=+$('#cn').value;if(cn===+r.count)return $('#er').textContent='지금과 같은 인원입니다';b.disabled=true;
     post('/rsvp-edit',{dong:r.dong,ho:r.ho,phone:MY.phone,count:cn}).then(function(j){b.disabled=false;if(!j.ok)return $('#er').textContent=j.message;rvDone('참석 인원이 변경되었습니다',r.dong+'동 '+r.ho+'호 · '+r.name+' · '+cn+'명',j.no)})};
-  $('#cx').onclick=function(){if(!confirm(r.dong+'동 '+r.ho+'호 총회 참석 신청을 취소할까요?'))return;var b=this;b.disabled=true;
+  $('#cx').onclick=function(){if(!confirm(r.dong+'동 '+r.ho+'호 총회참석 사전신청을 취소할까요?'))return;var b=this;b.disabled=true;
     post('/rsvp-edit',{dong:r.dong,ho:r.ho,phone:MY.phone,cancel:true}).then(function(j){b.disabled=false;if(!j.ok)return $('#er').textContent=j.message;
       h(head()+'<div class="wrap"><div class="card done"><div class="ic" style="background:#6A7385">✕</div><h2>신청이 취소되었습니다</h2><p class="muted">'+esc(r.dong+'동 '+r.ho+'호')+'</p><button class="btn ghost" id="again">다시 신청하기</button></div>'+foot()+'</div>');$('#again').onclick=function(){RV={};rvForm()}})};
 }
@@ -680,7 +680,7 @@ function rvCsv(){
   var q=function(v){v=String(v==null?'':v);if(/^[=+\-@]/.test(v))v="'"+v;return'"'+v.replace(/"/g,'""')+'"'};
   var lines=[['접수번호','동','호','이름','연락처','참석 인원','신청일시','상태'].map(q).join(',')].concat(r.map(function(x){return[x.no,x.dong,x.ho,x.name,x.phone,x.count,x.at,x.cancel?'본인 취소':x.changed?'변경 전':x.void?'무효':x.dup?'이전 신청':'유효'].map(q).join(',')}));
   var blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);a.download='총회참석신청_'+C.short+'_'+today()+'.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
+  a.href=URL.createObjectURL(blob);a.download='총회참석사전신청_'+C.short+'_'+today()+'.csv';document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},500);
 }
 if(C.page==='rsvp'){if(C.mode==='admin')rvLogin();else rvForm()}
 else if(C.mode==='admin')login();else intro();
