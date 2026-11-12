@@ -569,11 +569,11 @@ var RV={};
 /* 서버가 아직 2명 제한(이전 워커)일 때 3명 신청 안내 */
 function rvMsg(j,cn){return cn>2&&/1~2명/.test(j.message||'')?'3명 신청은 서버 반영 중입니다. 잠시 후 다시 시도해 주세요 (2명 이하는 바로 신청 · 변경 가능)':j.message}
 function rvInfo(){return '<div class="card"><h2>총회 안내</h2>'+
-  '<div class="stmt">본 신청은 <b>사전접수</b>로, 현장에서 사전 접수한 세대 확인 후 입장이 가능합니다. 사전신청은 <b>2026년 11월 30일까지</b> 받아 최종 참석 인원을 확정합니다.<br>총회에는 많은 비용이 소요되니 <b>꼭 참석하실 수 있는 세대만</b> 신청해 주셔야 하며, 입주 관련 중요한 사안에 대한 설명회가 진행되오니 각 세대별 꼭 참석해 주시기 바랍니다.</div>'+
+  '<div class="stmt">본 신청은 <b>사전접수</b>로, 현장에서 사전 접수한 세대 확인 후 입장이 가능합니다. 사전신청은 <b>2026년 12월 31일까지</b> 받아 최종 참석 인원을 확정합니다. 단, <b>신청 인원이 많을 경우 사전에 조기 마감</b>될 수 있습니다.<br>총회에는 많은 비용이 소요되니 <b>꼭 참석하실 수 있는 세대만</b> 신청해 주셔야 하며, 입주 관련 중요한 사안에 대한 설명회가 진행되오니 각 세대별 꼭 참석해 주시기 바랍니다.</div>'+
   '<h3 style="margin:14px 0 4px">총회 가이드</h3><table class="rv-t">'+
   '<tr><th>일시</th><td><b>2027년 2월 13일 (토)</b><br>오후 2시 ~ 5시</td></tr>'+
-  '<tr><th>장소</th><td><b>킨텍스 제2전시장 4층 대강당</b><br>(403~404호 · 총 600석)</td></tr>'+
-  '<tr><th>참석 제한</th><td>세대별 <b>3인</b><br><span class="muted">(총 좌석이 600석으로 선착순 입장이며, 좌석 부족 시 입식 참여 가능합니다.)</span></td></tr>'+'<tr><th>사전신청 마감</th><td><b>2026년 11월 30일</b>까지</td></tr>'+
+  '<tr><th>장소</th><td><b>킨텍스 제2전시장 4층 대회의실</b><br>(403~404호 · 총 600석)</td></tr>'+
+  '<tr><th>참석 제한</th><td>세대별 <b>3인</b><br><span class="muted">(총 좌석이 600석으로 선착순 입장이며, 좌석 부족 시 입식 참여 가능합니다.)</span></td></tr>'+'<tr><th>사전신청 마감</th><td><b>2026년 12월 31일</b>까지<br><span class="muted">(신청 인원이 많을 경우 사전에 조기 마감될 수 있습니다.)</span></td></tr>'+
   '<tr><th>총회 안건</th><td><ul class="rv-ul"><li>입예협 활동 보고 및 계획</li><li>사전점검 및 입주 본박람회 안내</li><li>인테리어 가이드</li><li>대출 및 소유권이전등기 안내 및 지원</li></ul></td></tr></table>'+
   '<div class="stmt" style="margin-top:12px"><b>이미 사전신청하신 세대</b>도 아래 「내 사전신청 확인 · 변경 · 취소」에서 참석 인원을 <b>최대 3명</b>까지 바꾸실 수 있습니다.</div><button class="btn ghost" id="mineTop" style="margin-top:10px">이미 신청하셨나요? 인원 변경 · 취소</button>'+'<div id="rvCnt"></div></div>'}
 function rvForm(){
@@ -613,7 +613,7 @@ function rvForm(){
 }
 function rvDone(title,line,no){
   h(head()+'<div class="wrap"><div class="card done"><div class="ic">✓</div><h2>'+esc(title)+'</h2><p class="muted">'+esc(line)+(no?'<br>접수번호 '+esc(no):'')+'</p>'+
-    '<p class="muted">총회 : 2027년 2월 13일 (토) 오후 2시 ~ 5시 · 킨텍스 제2전시장 4층 대강당 (403~404호)<br>인원 변경(최대 3명) · 취소는 「내 사전신청 확인」에서 할 수 있습니다. (사전신청 마감 2026년 11월 30일)</p>'+
+    '<p class="muted">총회 : 2027년 2월 13일 (토) 오후 2시 ~ 5시 · 킨텍스 제2전시장 4층 대회의실 (403~404호)<br>인원 변경(최대 3명) · 취소는 「내 사전신청 확인」에서 할 수 있습니다. (사전신청 마감 2026년 12월 31일 · 신청 인원이 많을 경우 조기 마감될 수 있습니다)</p>'+
     '<button class="btn ghost" id="mine">내 사전신청 확인 · 변경 · 취소</button><button class="btn ghost" id="again">다른 세대 사전신청</button><a class="btn ghost" href="'+esc(C.cafe)+'" target="_blank" rel="noopener">네이버 카페</a></div>'+foot()+'</div>');
   $('#again').onclick=function(){RV={};rvForm()};$('#mine').onclick=function(){rvMine()};
 }
